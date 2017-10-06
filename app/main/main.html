@@ -1,9 +1,10 @@
-<header class="header">
+<div class="maincontent">
+    <app-header></app-header>
     <div class="container">
-        <h1>Hello, Webpack!</h1>
-        <p>AngularJS + Webpack</p>
+        <div class="main">
+            <ng-outlet></ng-outlet>
+            <!-- <app-contacts></app-contacts> -->
+        </div>
+        <app-sidebar></app-sidebar>
     </div>
-</header>
-<div class="container">
-    <div class="main"></div>
 </div>

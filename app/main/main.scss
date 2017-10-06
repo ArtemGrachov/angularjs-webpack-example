@@ -1,25 +1,5 @@
-body {
-    font-family: sans-serif;
-}
-
-.header {
-    background: #121016;
-    color: white;
-    padding: 5px;
-    border-bottom: 3px solid lime;
-    h1 {
-        color: lime;
-        border-bottom: 1px solid lime;
-    }
-}
-
-.container {
-    margin: auto;
-    width: 1200px;
-}
-
 .main {
-    box-shadow: 0 0 10px 2px #E4DFDF;
-    margin-top: 20px;
-    min-height: 1000px;
+    float: left;
+    width: 900px;
+    margin: 10px 32px 10px 0;
 }

@@ -1,0 +1,16 @@
+.header {
+    background: #121016;
+    color: white;
+    padding: 5px;
+    border-bottom: 3px solid lime;
+    &__title {
+        color: lime;
+        font-size: 32px;
+        font-weight: bold;
+        border-bottom: 1px solid lime;
+        margin: 20px 0;
+    }
+    &__subtitle {
+        margin: 10px 0;
+    }
+}

@@ -15,7 +15,7 @@ const PATHS = {
 
 module.exports = {
     context: PATHS.app,
-    entry: './app.js',
+    entry: './app.module.js',
     output: {
         path: PATHS.dist,
         filename: 'bundle.js'
@@ -36,7 +36,19 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                loader: ExtractTextPlugin.extract(['css-loader', {
+                    loader: 'sass-loader',
+                    options: {
+                        data: '@import "./variables";',
+                        includePaths: [
+                            path.resolve(__dirname, './app/sass')
+                        ]
+                    }
+                }])
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
             }
         ]
     },

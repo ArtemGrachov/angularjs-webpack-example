@@ -1,0 +1,27 @@
+.products {
+    &-list {
+        margin: 0;
+        padding: 0;
+        list-style: none
+    }
+    &-item {
+        width: 32%;
+        display: inline-block;
+        border: 1px solid lime;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    &-prev {
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    &__img {
+        display: block;
+        margin: auto;
+    }
+    &__title {
+        color: lime;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+}
