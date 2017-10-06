@@ -1,4 +1,8 @@
+import './main.scss';
+
 export default {
-    controller: function () {},
-    template: '<h1>test</h1>'
+    controller: function () {
+        this.test = 'hello, webpack!'
+    },
+    template: require('./main.html')
 }
