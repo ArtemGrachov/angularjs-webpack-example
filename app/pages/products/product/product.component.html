@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{$ctrl.product.name}}</div>
+    <div class="panel-body media">
+        <div class="media-left">
+            <img ng-src="{{$ctrl.product.imgUrl}}" ng-alt="{{product.name}}" class="media-object img-thumbnail">
+        </div>
+        <div class="media-body">
+            <h2 class="media-heading">
+                {{$ctrl.product.name}}
+                <span class="badge">${{$ctrl.product.price}}</span>
+            </h2>
+            <p>
+                <!-- <span class="glyphicon glyphicon-star"></span> -->
+                {{$ctrl.product.rating}}
+            </p>
+            <p>
+                {{$ctrl.product.description}}
+            </p>
+        </div>
+    </div>
+</div>
+<app-comments>
+</app-comments>

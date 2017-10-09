@@ -1,5 +1,13 @@
-export default function () {
-    this.testData = function (input) {
-        return input + ' was used with test service';
+export default function ($http) {
+
+    this.get = function (url) {
+        return $http({
+            method: 'GET',
+            url: `http://localhost:3000/${url}`
+        }).then(res => res.data);
+    }
+
+    this.getWithAuth = function (url) {
+
     }
 }

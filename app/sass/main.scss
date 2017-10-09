@@ -29,6 +29,7 @@ body {
 .container {
     margin: auto;
     width: 1200px;
+    @extend %clearfix;
 }
 
 @import './tags.scss';
