@@ -1,5 +1,7 @@
+import './product.component.scss';
+
 export default {
-    controller: function (productsService) {
+    controller: function (productsService, cartService) {
         const $this = this;
         this.product = null;
         this.$routerOnActivate = function (next, previous) {
@@ -19,6 +21,9 @@ export default {
             productsService.getComments(this.product.id)
                 .then(res => this.comments = res);
         }
+        this.addToCart = function () {
+            cartService.addToCart(this.product.id);
+        };
     },
     template: require('./product.component.html')
 }

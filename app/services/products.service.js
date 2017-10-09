@@ -11,7 +11,6 @@ export default function (dataService) {
         return dataService.get(`comments?productId=${productId}`)
     }
     this.postComment = function (data) {
-        console.log('product service', data)
         return dataService.post('comments/', data);
     }
 }

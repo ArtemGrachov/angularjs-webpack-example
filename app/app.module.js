@@ -23,21 +23,25 @@ import AdminReviewsComponent from './pages/admin/reviews/reviews.component'
 
 // page inner elements
 import CommentsComponent from './elements/comments/comments.component';
+import CartComponent from './elements/cart/cart.component';
 
 // services
 import DataService from './services/data.service';
 import ProductsService from './services/products.service';
+import CartService from './services/cart.service';
 
 angular
     .module('app', [ngComponentRouter])
     .value('$routerRootComponent', 'app')
     .service('dataService', DataService)
     .service('productsService', ProductsService)
+    .service('cartService', CartService)
     .component('app', AppComponent)
     .component('appHeader', HeaderComponent)
     .component('appFooter', FooterComponent)
     .component('appSidebar', SidebarComponent)
     .component('appComments', CommentsComponent)
+    .component('appCart', CartComponent)
     .component('appAbout', AboutComponent)
     .component('appContacts', ContactsComponent)
     .component('appProducts', ProductsComponent)

@@ -1,0 +1,14 @@
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Your cart
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="product in $ctrl.cart track by $index">
+                {{product}}
+                <span ng-click="$ctrl.removeFromCart($index)" class="glyphicon glyphicon-remove pull-right"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-footer"></div>
+</div>

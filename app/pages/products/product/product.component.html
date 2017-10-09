@@ -1,19 +1,19 @@
 <div class="panel panel-default">
     <div class="panel-heading">{{$ctrl.product.name}}</div>
     <div class="panel-body media">
-        <div class="media-left">
-            <img ng-src="{{$ctrl.product.imgUrl}}" ng-alt="{{product.name}}" class="media-object img-thumbnail">
+        <img ng-src="{{$ctrl.product.imgUrl}}" ng-alt="{{product.name}}" class=" img-responsive">
+        <h2 class="media-heading">
+            {{$ctrl.product.name}}
+            <span class="badge"><span class="glyphicon glyphicon-usd"></span>{{$ctrl.product.price}}</span>
+            <span class="badge"><span class="glyphicon glyphicon-star"></span> {{$ctrl.product.rating}}</span>
+        </h2>
+        <div class="product-description">
+            {{$ctrl.product.description}}
         </div>
-        <div class="media-body">
-            <h2 class="media-heading">
-                {{$ctrl.product.name}}
-                <span class="badge"><span class="glyphicon glyphicon-usd"></span>{{$ctrl.product.price}}</span>
-                <span class="badge"><span class="glyphicon glyphicon-star"></span> {{$ctrl.product.rating}}</span>
-            </h2>
-            <p>
-                {{$ctrl.product.description}}
-            </p>
-        </div>
+        <button type="button" class="btn btn-success" ng-click="$ctrl.addToCart()">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            Add to cart
+        </button>
     </div>
 </div>
 <app-comments comment-form="$ctrl.comment" comments="$ctrl.comments" send="$ctrl.sendComment($ctrl.comment)"></app-comments>

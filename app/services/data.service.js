@@ -6,7 +6,6 @@ export default function ($http) {
         }).then(res => res.data);
     }
     this.post = function (url, data) {
-        console.log('data service', url, data)
         return $http({
             method: 'POST',
             url: `http://localhost:3000/${url}`,

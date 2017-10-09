@@ -1,10 +1,9 @@
 {
-  "products": [
-    {
+  "products": [{
       "id": "0",
       "name": "TV",
       "price": 1999.99,
-      "imgUrl": "http://lorempixel.com/200/200/food/1",
+      "imgUrl": "http://images.samsung.com/is/image/samsung/ru-hd-j4500-ue32j4500akxru-003-l-perspective-black?$PD_GALLERY_JPG$",
       "description": "Aliqua nulla elit ex et velit ullamco velit qui nostrud mollit elit. Pariatur magna laboris voluptate anim nulla occaecat aute amet nulla officia. Nostrud eu nulla cillum esse velit fugiat proident. Et elit consequat sit eu. Excepteur sit proident mollit nostrud mollit ea adipisicing Lorem eu. Aliqua proident officia proident nostrud laboris velit sunt ullamco id proident et nulla nulla do. In enim commodo adipisicing fugiat consequat amet velit adipisicing voluptate.",
       "rating": 3
     },
@@ -12,13 +11,12 @@
       "id": "1",
       "name": "Laptop",
       "price": 3999.99,
-      "imgUrl": "http://lorempixel.com/200/200/food/2",
+      "imgUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1xn7H?ver=22d6&q=60&m=6&h=423&w=752&b=%23FFFFFFFF&o=f",
       "description": "Quis pariatur veniam mollit non deserunt cillum id qui. Mollit laboris esse excepteur cillum sunt nulla nostrud id ullamco minim consectetur. Eiusmod sint sunt nisi sit Lorem ad labore laboris enim veniam. Enim duis aliquip nulla culpa do aliqua magna laboris deserunt commodo cillum. Incididunt et aute eu deserunt non sunt in aliquip incididunt nostrud deserunt. Exercitation duis dolor laborum irure incididunt velit duis est consectetur.",
       "rating": 0
     }
   ],
-  "comments": [
-    {
+  "comments": [{
       "id": "0",
       "name": "John Doe",
       "email": "john_doe@mail.com",
@@ -40,22 +38,18 @@
       "id": "BJhP1yF2W"
     }
   ],
-  "reviews": [
-    {
-      "id": " 0",
-      "author": "John Doe",
-      "email": "john_doe@mail.com",
-      "text": "Laboris eiusmod excepteur velit eu ex reprehenderit exercitation sit consequat nostrud anim consectetur adipisicing eu."
+  "reviews": [{
+    "id": " 0",
+    "author": "John Doe",
+    "email": "john_doe@mail.com",
+    "text": "Laboris eiusmod excepteur velit eu ex reprehenderit exercitation sit consequat nostrud anim consectetur adipisicing eu."
+  }],
+  "shops": [{
+    "id": "0",
+    "name": "Shop #1",
+    "location": {
+      "lat": 0,
+      "lng": 0
     }
-  ],
-  "shops": [
-    {
-      "id": "0",
-      "name": "Shop #1",
-      "location": {
-        "lat": 0,
-        "lng": 0
-      }
-    }
-  ]
+  }]
 }

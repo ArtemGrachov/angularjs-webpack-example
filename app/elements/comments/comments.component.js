@@ -4,6 +4,6 @@ export default {
         commentForm: '=',
         comments: '='
     },
-    controller: function ($scope, dataService) {},
+    controller: function () {},
     template: require('./comments.component.html')
 }
