@@ -16,5 +16,4 @@
         </div>
     </div>
 </div>
-<app-comments comments="$ctrl.product.comments">
-</app-comments>
+<app-comments comment-form="$ctrl.comment" comments="$ctrl.comments" send="$ctrl.sendComment($ctrl.comment)"></app-comments>

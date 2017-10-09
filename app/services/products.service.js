@@ -1,8 +1,17 @@
 export default function (dataService) {
+    this.productsUrl = 'products/';
+
     this.getProduct = function (index) {
-        return dataService.get(`products/${index}`)
+        return dataService.get(this.productsUrl + index);
     }
     this.getProducts = function () {
-        return dataService.get('products')
+        return dataService.get(this.productsUrl)
+    }
+    this.getComments = function (productId) {
+        return dataService.get(`comments?productId=${productId}`)
+    }
+    this.postComment = function (data) {
+        console.log('product service', data)
+        return dataService.post('comments/', data);
     }
 }

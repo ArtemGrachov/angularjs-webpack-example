@@ -1,16 +1,12 @@
 {
-  "products": [{
+  "products": [
+    {
       "id": "0",
       "name": "TV",
       "price": 1999.99,
       "imgUrl": "http://lorempixel.com/200/200/food/1",
       "description": "Aliqua nulla elit ex et velit ullamco velit qui nostrud mollit elit. Pariatur magna laboris voluptate anim nulla occaecat aute amet nulla officia. Nostrud eu nulla cillum esse velit fugiat proident. Et elit consequat sit eu. Excepteur sit proident mollit nostrud mollit ea adipisicing Lorem eu. Aliqua proident officia proident nostrud laboris velit sunt ullamco id proident et nulla nulla do. In enim commodo adipisicing fugiat consequat amet velit adipisicing voluptate.",
-      "rating": 3,
-      "comments": [{
-        "id": "0",
-        "author": "John Doe",
-        "text": "Excepteur est eiusmod dolore veniam aute sunt in est aute exercitation."
-      }]
+      "rating": 3
     },
     {
       "id": "1",
@@ -18,21 +14,48 @@
       "price": 3999.99,
       "imgUrl": "http://lorempixel.com/200/200/food/2",
       "description": "Quis pariatur veniam mollit non deserunt cillum id qui. Mollit laboris esse excepteur cillum sunt nulla nostrud id ullamco minim consectetur. Eiusmod sint sunt nisi sit Lorem ad labore laboris enim veniam. Enim duis aliquip nulla culpa do aliqua magna laboris deserunt commodo cillum. Incididunt et aute eu deserunt non sunt in aliquip incididunt nostrud deserunt. Exercitation duis dolor laborum irure incididunt velit duis est consectetur.",
-      "rating": 0,
-      "comments": []
+      "rating": 0
     }
   ],
-  "reviews": [{
-    "id": " 0",
-    "author": "John Doe",
-    "text": "Laboris eiusmod excepteur velit eu ex reprehenderit exercitation sit consequat nostrud anim consectetur adipisicing eu."
-  }],
-  "shops": [{
-    "id": "0",
-    "name": "Shop #1",
-    "location": {
-      "lat": 0,
-      "lng": 0
+  "comments": [
+    {
+      "id": "0",
+      "name": "John Doe",
+      "email": "john_doe@mail.com",
+      "productId": "0",
+      "text": "Excepteur est eiusmod dolore veniam aute sunt in est aute exercitation."
+    },
+    {
+      "name": "Admin",
+      "email": "grachov2195@gmail.com",
+      "text": "qqqqq",
+      "productId": "0",
+      "id": "ryXm1ytn-"
+    },
+    {
+      "name": "Artem",
+      "email": "grachov2195@gmail.com",
+      "text": "Nice laptop!",
+      "productId": "1",
+      "id": "BJhP1yF2W"
     }
-  }]
+  ],
+  "reviews": [
+    {
+      "id": " 0",
+      "author": "John Doe",
+      "email": "john_doe@mail.com",
+      "text": "Laboris eiusmod excepteur velit eu ex reprehenderit exercitation sit consequat nostrud anim consectetur adipisicing eu."
+    }
+  ],
+  "shops": [
+    {
+      "id": "0",
+      "name": "Shop #1",
+      "location": {
+        "lat": 0,
+        "lng": 0
+      }
+    }
+  ]
 }
