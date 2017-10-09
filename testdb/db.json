@@ -1,5 +1,6 @@
 {
-  "products": [{
+  "products": [
+    {
       "id": "0",
       "name": "TV",
       "price": 1999.99,
@@ -16,7 +17,8 @@
       "rating": 0
     }
   ],
-  "comments": [{
+  "comments": [
+    {
       "id": "0",
       "name": "John Doe",
       "email": "john_doe@mail.com",
@@ -38,18 +40,34 @@
       "id": "BJhP1yF2W"
     }
   ],
-  "reviews": [{
-    "id": " 0",
-    "author": "John Doe",
-    "email": "john_doe@mail.com",
-    "text": "Laboris eiusmod excepteur velit eu ex reprehenderit exercitation sit consequat nostrud anim consectetur adipisicing eu."
-  }],
-  "shops": [{
-    "id": "0",
-    "name": "Shop #1",
-    "location": {
-      "lat": 0,
-      "lng": 0
+  "reviews": [
+    {
+      "id": " 0",
+      "name": "John Doe",
+      "email": "john_doe@mail.com",
+      "text": "Laboris eiusmod excepteur velit eu ex reprehenderit exercitation sit consequat nostrud anim consectetur adipisicing eu."
+    },
+    {
+      "name": "Admin",
+      "email": "grachov2195@gmail.com",
+      "text": "ffff",
+      "id": "rkcY4gKn-"
+    },
+    {
+      "name": "Admin",
+      "email": "grachov2195@gmail.com",
+      "text": "lorem ipsum dolor sit amet",
+      "id": "Sy8c4ethb"
     }
-  }]
+  ],
+  "shops": [
+    {
+      "id": "0",
+      "name": "Shop #1",
+      "location": {
+        "lat": 0,
+        "lng": 0
+      }
+    }
+  ]
 }

@@ -3,7 +3,6 @@ import './product.component.scss';
 export default {
     controller: function (productsService, cartService) {
         const $this = this;
-        this.product = null;
         this.$routerOnActivate = function (next, previous) {
             productsService.getProduct(next.params.id)
                 .then(res => {
