@@ -7,17 +7,14 @@
         <div class="media-body">
             <h2 class="media-heading">
                 {{$ctrl.product.name}}
-                <span class="badge">${{$ctrl.product.price}}</span>
+                <span class="badge"><span class="glyphicon glyphicon-usd"></span>{{$ctrl.product.price}}</span>
+                <span class="badge"><span class="glyphicon glyphicon-star"></span> {{$ctrl.product.rating}}</span>
             </h2>
-            <p>
-                <!-- <span class="glyphicon glyphicon-star"></span> -->
-                {{$ctrl.product.rating}}
-            </p>
             <p>
                 {{$ctrl.product.description}}
             </p>
         </div>
     </div>
 </div>
-<app-comments>
+<app-comments comments="$ctrl.product.comments">
 </app-comments>

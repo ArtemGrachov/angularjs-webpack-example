@@ -1,8 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 const extractCSS = new ExtractTextPlugin({
     filename: 'bundle.css'
@@ -35,6 +36,15 @@ module.exports = {
                 loader: ExtractTextPlugin.extract(['css-loader'])
             },
             {
+                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        outputPath: './assets/'
+                    }
+                }]
+            },
+            {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(['css-loader', {
                     loader: 'sass-loader',
@@ -58,6 +68,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './index.html'
+        }),
+        new ngAnnotatePlugin({
+            add: true
         })
     ]
 }

@@ -9,12 +9,9 @@
             <div class="media-body">
                 <h2 class="media-heading">
                     {{product.name}}
-                    <span class="badge">${{product.price}}</span>
+                    <span class="badge"><span class="glyphicon glyphicon-usd"></span>{{product.price}}</span>
+                    <span class="badge"><span class="glyphicon glyphicon-star"></span> {{product.rating}}</span>
                 </h2>
-                <p>
-                    <!-- <span class="glyphicon glyphicon-star"></span> -->
-                    {{product.rating}}
-                </p>
                 <p>
                     {{product.description}}
                 </p>
