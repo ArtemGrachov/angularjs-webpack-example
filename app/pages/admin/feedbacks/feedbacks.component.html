@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Feedbacks</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="feedback in $ctrl.feedbacks">
+                <h4>
+                    {{feedback.subject}}
+                    <small>
+                        from 
+                        <a href="mailto:{{feedback.email}}">
+                            {{feedback.name}} ({{feedback.email}})
+                        </a>
+                    </small>
+                    <button type="button" class="btn btn-link pull-right" ng-click="$ctrl.deleteFeedback(feedback.id)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </h4>
+                <p>{{feedback.text}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

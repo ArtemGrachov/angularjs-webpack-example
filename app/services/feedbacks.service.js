@@ -1,10 +1,7 @@
 export default function (dataService) {
     this.feedbackUrl = 'feedbacks/';
-    this.loadFeedbacks = function () {
+    this.getFeedbacks = function () {
         return dataService.get(this.feedbackUrl);
-    }
-    this.loadFeedback = function (id) {
-        return dataService.get(this.feedbackUrl + id)
     }
     this.sendFeedback = function (data) {
         return dataService.post(this.feedbackUrl, data)

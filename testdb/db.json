@@ -89,25 +89,11 @@
   ],
   "feedbacks": [
     {
-      "name": "Admin",
-      "email": "grachov2195@mail.ru",
-      "subject": "gg",
-      "text": "gg",
+      "name": "Guest",
+      "email": "qwerty@qw.qq",
+      "subject": "Hello?",
+      "text": "Hi",
       "id": 1
-    },
-    {
-      "name": "gggg",
-      "email": "grachov2195@gmail.com",
-      "subject": "ggg",
-      "text": "ggg",
-      "id": 2
-    },
-    {
-      "name": "zzzz",
-      "subject": "zzzz",
-      "text": "zzzz",
-      "email": "zzz@zzzz.zzz",
-      "id": 3
     }
   ]
 }
