@@ -1,20 +1,20 @@
 export default {
-    controller: function (dataService) {
-        this.sendReply = function (data) {
-            dataService.post('reviews/', data)
+    controller: function (reviewsService) {
+        this.sendReview = function (data) {
+            reviewsService.addReview(data)
                 .then(
-                    res => this.refreshReplies()
+                    res => this.refreshReviews()
                 );
         }
-        this.refreshReplies = function () {
-            dataService.get('reviews')
+        this.refreshReviews = function () {
+            reviewsService.getReviews()
                 .then(
                     res => {
                         this.reviews = res;
                     }
                 )
         }
-        this.refreshReplies();
+        this.refreshReviews();
     },
     template: require('./about.component.html')
 }

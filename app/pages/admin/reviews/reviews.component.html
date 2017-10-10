@@ -1,1 +1,46 @@
-admin reviews page
+<div class="panel panel-default">
+    <div class="panel-heading">Shop reviews list</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="review in $ctrl.reviews track by $index">
+                <h4>{{review.name}}
+                    <small class="pull-right">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="mailto:{{review.email}}">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    {{review.email}}
+                                </a>
+                            </li>
+                            <li>
+                                <button ng-click="$ctrl.editToggle(review)" class="btn btn-link">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    Edit
+                                </button>
+                            </li>
+                        </ul>
+                    </small>
+                </h4>
+                <p>{{review.text}}</p>
+                <form ng-if="review.edit" ng-submit="$ctrl.submitReview(review)">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="test" class="form-control" ng-model="review.name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" ng-model="review.email">
+                    </div>
+                    <div class="form-group">
+                        <label>Review</label>
+                        <textarea rows="5" class="form-control" ng-model="review.text">{{review.text}}</textarea>
+                    </div>
+                    <div class="btn-group btn-group-xs">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="button" class="btn btn-danger" ng-click="$ctrl.deleteReview(review.id)">Delete</button>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
