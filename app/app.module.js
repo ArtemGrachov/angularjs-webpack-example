@@ -35,6 +35,7 @@ import CartService from './services/cart.service';
 import CommentsService from './services/comments.service';
 import ReviewsService from './services/reviews.service';
 import FeedbacksService from './services/feedbacks.service';
+import OrdersService from './services/orders.service';
 
 angular
     .module('app', [ngComponentRouter])
@@ -45,6 +46,7 @@ angular
     .service('commentsService', CommentsService)
     .service('reviewsService', ReviewsService)
     .service('feedbacksService', FeedbacksService)
+    .service('ordersService', OrdersService)
     .component('app', AppComponent)
     .component('appHeader', HeaderComponent)
     .component('appFooter', FooterComponent)

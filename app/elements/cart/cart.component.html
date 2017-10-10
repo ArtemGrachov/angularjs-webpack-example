@@ -9,14 +9,14 @@
                 <span ng-click="$ctrl.removeFromCart($index)" class="glyphicon glyphicon-remove pull-right"></span>
             </li>
         </ul>
-        <a ng-link="['Order']" class="btn btn-block btn-success pull-right">
+        <a ng-link="['Order']" ng-show="$ctrl.cart.length > 0" class="btn btn-block btn-success pull-right">
             <span class="glyphicon glyphicon-ok"></span>
             Order products!
         </a>
     </div>
     <div class="panel-footer">
         <strong>Total: 
-            ${{$ctrl.calcTotal()}}
+            ${{$ctrl.total()}}
         </strong>
     </div>
 </div>

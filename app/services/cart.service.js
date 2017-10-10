@@ -1,9 +1,5 @@
 export default function (productsService) {
     this.cart = [];
-    this.getCart = function () {
-        this.getStorage();
-        return this.cart;
-    }
     this.updateStorage = function () {
         localStorage.setItem('cart', JSON.stringify(this.cart.map(product => product.id)));
     }
@@ -27,8 +23,15 @@ export default function (productsService) {
                 .then(res => this.cart.push({
                     id: res.id,
                     price: res.price,
-                    name: res.name
+                    name: res.name,
+                    imgUrl: res.imgUrl
                 }))
         })
     }
+    this.calcTotal = function () {
+        let sum = 0;
+        this.cart.forEach(product => sum += +(product.price).toFixed(2));
+        return +(sum).toFixed(2);
+    }
+    this.getStorage();
 }

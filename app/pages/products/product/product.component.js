@@ -23,7 +23,8 @@ export default {
             cartService.addToCart({
                 id: this.product.id,
                 name: this.product.name,
-                price: this.product.price
+                price: this.product.price,
+                imgUrl: this.product.imgUrl
             });
         }
     },
