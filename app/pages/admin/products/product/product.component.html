@@ -2,7 +2,7 @@
     <div class="panel-heading">
         {{$ctrl.product.name ? $ctrl.product.name : 'New product' }}
     </div>
-    <form class="panel-body" ng-submit="$ctrl.subm()" name="productForm" novalidate>
+    <form class="panel-body" ng-submit="$ctrl.submitProduct()" name="productForm" novalidate>
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" ng-model="$ctrl.product.name" class="form-control" ng-required="true" />
@@ -35,8 +35,8 @@
         <div class="button-group">
             <button type="submit" class="btn btn-success" ng-disabled="productForm.$invalid">Submit</button>
             <button type="button" class="btn btn-default" ng-link="['AdminProducts']">Cancel</button>
-            <button type="button" class="btn btn-info" ng-click="$ctrl.reset()">Reset</button>
-            <button type="button" class="btn btn-danger" ng-click="$ctrl.del()" ng-if="$ctrl.product.id">Delete</button>
+            <button type="button" class="btn btn-info" ng-click="$ctrl.resetProduct()">Reset</button>
+            <button type="button" class="btn btn-danger" ng-click="$ctrl.deleteProduct()" ng-if="$ctrl.product.id">Delete</button>
         </div>
     </form>
 </div>

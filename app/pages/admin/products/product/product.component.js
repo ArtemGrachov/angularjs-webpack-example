@@ -19,11 +19,10 @@ export default {
                 }
             }
         }
-        this.reset = function () {
+        this.resetProduct = function () {
             this.product = this.cache;
-
         }
-        this.subm = function () {
+        this.submitProduct = function () {
             if (this.product && this.product.id) {
                 productsService.updateProduct(this.product)
                     .then(res => this.$router.navigate(['AdminProducts']));
@@ -32,7 +31,7 @@ export default {
                     .then(res => this.$router.navigate(['AdminProducts']));
             }
         }
-        this.del = function () {
+        this.deleteProduct = function () {
             productsService.deleteProduct(this.product.id)
                 .then(res => this.$router.navigate(['AdminProducts']))
         }

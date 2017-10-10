@@ -1,4 +1,4 @@
-export default function (dataService) {
+export default function (dataService, commentsService) {
     this.productsUrl = 'products/';
 
     this.getProduct = function (id) {
@@ -17,9 +17,9 @@ export default function (dataService) {
         return dataService.delete(this.productsUrl + id)
     }
     this.getComments = function (id) {
-        return dataService.get(`comments?productId=${id}`);
+        return commentsService.getComments(`?productId=${id}`);
     }
     this.postComment = function (data) {
-        return dataService.post('comments/', data);
+        return commentsService.addComment(data);
     }
 }
