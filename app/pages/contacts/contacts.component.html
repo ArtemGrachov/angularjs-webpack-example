@@ -1,8 +1,49 @@
-<div class="title">
-    Contacts
+<div class="panel panel-primary">
+    <div class="panel-heading">Our contacts</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h4><span class="badge"><span class="glyphicon glyphicon-earphone"></span></span> +(380) 97 555 55 55</h4>
+            </li>
+            <li class="list-group-item">
+                <h4><span class="badge"><span class="glyphicon glyphicon-envelope"></span></span> lorem@ipsum.sit</h4>
+            </li>
+            <li class="list-group-item">
+                <h4><span class="badge"><span class="glyphicon glyphicon-map-marker"></span></span> Kyiv, Lorem Ipsum str., 5</h4>
+            </li>
+        </ul>
+    </div>
 </div>
-<ul class="contacts-list">
-    <li class- "contacts-item">Phone: +(380) 97 555 55 55</li>
-    <li class- "contacts-item">Email: lorem@ipsum.sit</li>
-    <li class- "contacts-item">Address: Lorem ipsum dolor sit amet, 5</li>
-</ul>
+<div class="panel panel-primary">
+    <div class="panel-heading">Feedback</div>
+    <form class="panel-body" ng-submit="$ctrl.sendFeedback()">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                <input type="text" id="name" class="form-control" placeholder="Your name" ng-model="$ctrl.feedbackForm.name" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </span>
+                <input type="email" id="email" class="form-control" placeholder="Your email" ng-model="$ctrl.feedbackForm.email" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-question-sign"></i>
+                    </span>
+                <input type="text" id="subject" class="form-control" placeholder="Subject" ng-model="$ctrl.feedbackForm.subject" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea id="comment" class="form-control" placeholder="Your comment" rows="10" ng-model="$ctrl.feedbackForm.text" ng-required="true"></textarea>
+        </div>
+        <input type="submit" value="Send feedback" class="btn btn-primary" ng-disabled="feedbackForm.$invalid" />
+    </form>
+</div>

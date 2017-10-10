@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{$ctrl.product.name ? $ctrl.product.name : 'New product' }}
+    </div>
+    <form class="panel-body" ng-submit="$ctrl.subm()" name="productForm" novalidate>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" ng-model="$ctrl.product.name" class="form-control" ng-required="true" />
+        </div>
+        <div class="form-group">
+            <label for="price">Price (USD)</label>
+            <input type="number" id="price" class="form-control" ng-model="$ctrl.product.price" ng-required="true" />
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" id="rating" class="form-control" ng-model="$ctrl.product.rating" ng-required="true" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="rating">Image URL</label>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <textarea id="imgUrl" rows="8" class="form-control" ng-model="$ctrl.product.imgUrl" ng-required="true"></textarea>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img ng-src="{{$ctrl.product.imgUrl}}" alt="{{$ctrl.product.name}}" class="img-thumbnail" ng-show="$ctrl.product.imgUrl">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="10" class="form-control" ng-model="$ctrl.product.description" ng-required="true"></textarea>
+        </div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-success" ng-disabled="productForm.$invalid">Submit</button>
+            <button type="button" class="btn btn-default" ng-link="['AdminProducts']">Cancel</button>
+            <button type="button" class="btn btn-info" ng-click="$ctrl.reset()">Reset</button>
+            <button type="button" class="btn btn-danger" ng-click="$ctrl.del()" ng-if="$ctrl.product.id">Delete</button>
+        </div>
+    </form>
+</div>

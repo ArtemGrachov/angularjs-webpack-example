@@ -2,8 +2,7 @@ import './product.component.scss';
 
 export default {
     controller: function (productsService, cartService) {
-        const $this = this;
-        this.$routerOnActivate = function (next, previous) {
+        this.$routerOnActivate = function (next) {
             productsService.getProduct(next.params.id)
                 .then(res => {
                     this.product = res;

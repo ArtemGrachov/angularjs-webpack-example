@@ -23,7 +23,7 @@ export default {
             name: 'Contacts'
         },
         {
-            path: '/admin/',
+            path: '/admin/...',
             component: 'appAdmin',
             name: 'Admin'
         }

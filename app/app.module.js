@@ -16,10 +16,12 @@ import AboutComponent from './pages/about/about.component';
 import ContactsComponent from './pages/contacts/contacts.component';
 import ProductsComponent from './pages/products/products.component';
 import ProductComponent from './pages/products/product/product.component';
-import AdminComponent from './pages/admin/admin.component'
-import AdminCommentsComponent from './pages/admin/comments/comments.component'
-import AdminProductsComponent from './pages/admin/products/products.component'
-import AdminReviewsComponent from './pages/admin/reviews/reviews.component'
+import AdminComponent from './pages/admin/admin.component';
+import AdminCommentsComponent from './pages/admin/comments/comments.component';
+import AdminProductsComponent from './pages/admin/products/products.component';
+import AdminProductComponent from './pages/admin/products/product/product.component';
+import AdminReviewsComponent from './pages/admin/reviews/reviews.component';
+import AdminFeedbacksComponent from './pages/admin/feedbacks/feedbacks.component';
 
 // page inner elements
 import CommentsComponent from './elements/comments/comments.component';
@@ -29,6 +31,9 @@ import CartComponent from './elements/cart/cart.component';
 import DataService from './services/data.service';
 import ProductsService from './services/products.service';
 import CartService from './services/cart.service';
+import CommentsService from './services/comments.service';
+import ReviewsService from './services/reviews.service';
+import FeedbacksService from './services/feedbacks.service';
 
 angular
     .module('app', [ngComponentRouter])
@@ -36,6 +41,9 @@ angular
     .service('dataService', DataService)
     .service('productsService', ProductsService)
     .service('cartService', CartService)
+    .service('commentsService', CommentsService)
+    .service('reviewsService', ReviewsService)
+    .service('feedbacksService', FeedbacksService)
     .component('app', AppComponent)
     .component('appHeader', HeaderComponent)
     .component('appFooter', FooterComponent)
@@ -48,5 +56,7 @@ angular
     .component('appProduct', ProductComponent)
     .component('appAdmin', AdminComponent)
     .component('appAdminProducts', AdminProductsComponent)
+    .component('appAdminProduct', AdminProductComponent)
     .component('appAdminComments', AdminCommentsComponent)
     .component('appAdminReviews', AdminReviewsComponent)
+    .component('appAdminFeedbacks', AdminFeedbacksComponent);

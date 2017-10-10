@@ -1,1 +1,25 @@
-admin products page
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Products list
+        <a ng-link="['AdminNewProduct']" class="pull-right btn btn-primary btn-xs">Add product</a>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="product in $ctrl.products" ng-link="['AdminProduct',{id:product.id}]">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <strong>{{product.name}}</strong>
+                    </li>
+                    <li class="list-inline-item pull-right">
+                        <span class="badge">
+                                ${{product.price}}
+                        </span>
+                    </li>
+                    <li class="list-inline-item">
+                        Rating: {{product.rating}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
