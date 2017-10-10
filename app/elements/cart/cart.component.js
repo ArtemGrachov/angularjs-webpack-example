@@ -1,20 +1,13 @@
 export default {
     controller: function (cartService, productsService) {
-        this.cart = [];
-        this.total = 0;
-        cartService.getCart()
-            .map((id, index) => productsService
-                .getProduct(id)
-                .then(res => {
-                    this.cart.push(res.name);
-                    this.total += res.price;
-                })
-                .catch(
-                    err => cartService.removeFromCart(index)
-                )
-            )
+        this.cart = cartService.getCart();
         this.removeFromCart = function (index) {
             cartService.removeFromCart(index);
+        }
+        this.calcTotal = function () {
+            let sum = 0;
+            this.cart.forEach(product => sum += +(product.price).toFixed(2));
+            return +(sum).toFixed(2);
         }
     },
     template: require('./cart.component.html')

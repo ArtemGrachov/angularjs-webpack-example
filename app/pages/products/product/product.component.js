@@ -20,8 +20,12 @@ export default {
                 .then(res => this.comments = res);
         }
         this.addToCart = function () {
-            cartService.addToCart(this.product.id);
-        };
+            cartService.addToCart({
+                id: this.product.id,
+                name: this.product.name,
+                price: this.product.price
+            });
+        }
     },
     template: require('./product.component.html')
 }

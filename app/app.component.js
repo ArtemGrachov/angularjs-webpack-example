@@ -26,6 +26,11 @@ export default {
             path: '/admin/...',
             component: 'appAdmin',
             name: 'Admin'
+        },
+        {
+            path: '/order/',
+            component: 'appOrder',
+            name: 'Order'
         }
     ]
 }

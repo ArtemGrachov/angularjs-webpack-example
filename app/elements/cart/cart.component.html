@@ -5,14 +5,18 @@
     <div class="panel-body">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="product in $ctrl.cart track by $index">
-                {{product}}
+                {{product.name}} ${{product.price}}
                 <span ng-click="$ctrl.removeFromCart($index)" class="glyphicon glyphicon-remove pull-right"></span>
             </li>
         </ul>
+        <a ng-link="['Order']" class="btn btn-block btn-success pull-right">
+            <span class="glyphicon glyphicon-ok"></span>
+            Order products!
+        </a>
     </div>
     <div class="panel-footer">
         <strong>Total: 
-            ${{$ctrl.total}}
+            ${{$ctrl.calcTotal()}}
         </strong>
     </div>
 </div>

@@ -1,25 +1,34 @@
-export default function () {
+export default function (productsService) {
+    this.cart = [];
     this.getCart = function () {
-        return JSON.parse(localStorage.getItem('cart'));
+        this.getStorage();
+        return this.cart;
     }
-    this.refreshStorage = function () {
-        localStorage.setItem('cart', JSON.stringify(this.cart));
-        console.log(this.getCart())
+    this.updateStorage = function () {
+        localStorage.setItem('cart', JSON.stringify(this.cart.map(product => product.id)));
     }
-    this.deleteStorage = function () {
-        localStorage.removeItem('cart');
-        this.cart = [];
-    }
-    this.addToCart = function (productId) {
-        this.cart.push(productId);
-        this.refreshStorage();
+    this.addToCart = function (cartObj) {
+        this.cart.push(cartObj);
+        this.updateStorage();
     }
     this.removeFromCart = function (index) {
         this.cart.splice(index, 1);
-        this.refreshStorage();
+        this.updateStorage();
     }
-    this.cart = this.getCart();
-    if (!this.cart) {
+    this.clearCart = function () {
         this.cart = [];
+        this.updateStorage();
+    }
+    this.getStorage = function () {
+        const ids = JSON.parse(localStorage.getItem('cart'));
+        this.cart = [];
+        ids.forEach(id => {
+            productsService.getProduct(id)
+                .then(res => this.cart.push({
+                    id: res.id,
+                    price: res.price,
+                    name: res.name
+                }))
+        })
     }
 }

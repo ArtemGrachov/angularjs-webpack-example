@@ -22,6 +22,7 @@ import AdminProductsComponent from './pages/admin/products/products.component';
 import AdminProductComponent from './pages/admin/products/product/product.component';
 import AdminReviewsComponent from './pages/admin/reviews/reviews.component';
 import AdminFeedbacksComponent from './pages/admin/feedbacks/feedbacks.component';
+import OrderComponent from './pages/order/order.component';
 
 // page inner elements
 import CommentsComponent from './elements/comments/comments.component';
@@ -59,4 +60,5 @@ angular
     .component('appAdminProduct', AdminProductComponent)
     .component('appAdminComments', AdminCommentsComponent)
     .component('appAdminReviews', AdminReviewsComponent)
-    .component('appAdminFeedbacks', AdminFeedbacksComponent);
+    .component('appAdminFeedbacks', AdminFeedbacksComponent)
+    .component('appOrder', OrderComponent)
