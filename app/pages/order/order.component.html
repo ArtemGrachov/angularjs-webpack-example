@@ -1,4 +1,7 @@
-<div class="panel panel-success">
+<div class="alert alert-warning" ng-if="$ctrl.cart.length == 0">
+    Nothing to order
+</div>
+<div class="panel panel-success" ng-if="$ctrl.cart.length > 0">
     <div class="panel-heading">
         Order
     </div>
@@ -11,6 +14,15 @@
                 </span>
                 <input type="text" id="name" placeholder="Enter your name" class="form-control" ng-required="true
        " ng-model="$ctrl.orderForm.name">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                </span>
+                <input type="email" id="name" placeholder="Enter your email" class="form-control" ng-required="true
+       " ng-model="$ctrl.orderForm.email">
             </div>
         </div>
         <div class="form-group">
@@ -38,7 +50,7 @@
     </form>
 </div>
 <div class="panel-group">
-    <div class="panel panel-default" ng-repeat="product in $ctrl.cart">
+    <div class="panel panel-default" ng-repeat="product in $ctrl.cart track by $index">
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-2">
@@ -47,6 +59,9 @@
                 <div class="col-sm-10">
                     <h4>
                         {{product.name}}
+                        <a ng-click="$ctrl.removeFromCart($index)" class="pull-right">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </a>
                     </h4>
                     <strong>${{product.price}}</strong>
                 </div>

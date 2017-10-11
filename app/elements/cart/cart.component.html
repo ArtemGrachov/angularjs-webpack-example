@@ -1,12 +1,15 @@
 <div class="panel panel-success">
     <div class="panel-heading">
         <span class="glyphicon glyphicon-shopping-cart"></span> Your cart
+        <button class="btn btn-danger btn-xs pull-right" ng-show="$ctrl.cart.length > 0" ng-click="$ctrl.clearCart()">
+            <span class="glyphicon glyphicon-remove"></span> Clear cart
+        </button>
     </div>
     <div class="panel-body">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="product in $ctrl.cart track by $index">
                 {{product.name}} ${{product.price}}
-                <span ng-click="$ctrl.removeFromCart($index)" class="glyphicon glyphicon-remove pull-right"></span>
+                <span ng-click="$ctrl.removeFromCart($index)" class="glyphicon glyphicon-remove pull-right text-danger"></span>
             </li>
         </ul>
         <a ng-link="['Order']" ng-show="$ctrl.cart.length > 0" class="btn btn-block btn-success pull-right">

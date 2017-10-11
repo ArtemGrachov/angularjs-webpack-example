@@ -1,6 +1,6 @@
 import '../node_modules/normalize.css/normalize.css'
-import './sass/main.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './sass/main.scss';
 
 import angular from 'angular';
 import ngComponentRouter from 'ngcomponentrouter';
@@ -16,13 +16,15 @@ import AboutComponent from './pages/about/about.component';
 import ContactsComponent from './pages/contacts/contacts.component';
 import ProductsComponent from './pages/products/products.component';
 import ProductComponent from './pages/products/product/product.component';
+import OrderComponent from './pages/order/order.component';
 import AdminComponent from './pages/admin/admin.component';
 import AdminCommentsComponent from './pages/admin/comments/comments.component';
 import AdminProductsComponent from './pages/admin/products/products.component';
 import AdminProductComponent from './pages/admin/products/product/product.component';
 import AdminReviewsComponent from './pages/admin/reviews/reviews.component';
 import AdminFeedbacksComponent from './pages/admin/feedbacks/feedbacks.component';
-import OrderComponent from './pages/order/order.component';
+import AdminOrdersComponent from './pages/admin/orders/orders.component';
+import AdminOrderComponent from './pages/admin/orders/order/order.component';
 
 // page inner elements
 import CommentsComponent from './elements/comments/comments.component';
@@ -58,9 +60,11 @@ angular
     .component('appProducts', ProductsComponent)
     .component('appProduct', ProductComponent)
     .component('appAdmin', AdminComponent)
+    .component('appOrder', OrderComponent)
     .component('appAdminProducts', AdminProductsComponent)
     .component('appAdminProduct', AdminProductComponent)
     .component('appAdminComments', AdminCommentsComponent)
     .component('appAdminReviews', AdminReviewsComponent)
     .component('appAdminFeedbacks', AdminFeedbacksComponent)
-    .component('appOrder', OrderComponent)
+    .component('appAdminOrders', AdminOrdersComponent)
+    .component('appAdminOrder', AdminOrderComponent)

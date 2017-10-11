@@ -5,6 +5,9 @@ export default {
             cartService.removeFromCart(index);
         }
         this.total = cartService.calcTotal;
+        this.clearCart = function () {
+            cartService.clearCart();
+        }
     },
     template: require('./cart.component.html')
 }

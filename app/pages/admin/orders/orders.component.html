@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <thead>
+        <th>Name</th>
+        <th>Products count</th>
+        <th>Total price</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="order in $ctrl.orders" ng-link="['AdminOrder', {id: order.id}]" ng-class="$ctrl.setClass(order.status)">
+            <td>{{order.name}}</td>
+            <td>{{order.cart.length}}</td>
+            <td>${{$ctrl.totalPrice(order.cart)}}</td>
+            <td><strong>{{order.status}}</strong></td>
+        </tr>
+    </tbody>
+</table>

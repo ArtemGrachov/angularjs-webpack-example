@@ -1,11 +1,19 @@
-<div class="row">
-    <nav class="col-xs-12">
-        <div class="btn-group">
-            <a ng-link="['AdminProducts']" class="btn btn-default">Products</a>
-            <a ng-link="['AdminReviews']" class="btn btn-default">Reviews</a>
-            <a ng-link="['AdminComments']" class="btn btn-default">Comments</a>
-            <a ng-link="['AdminFeedbacks']" class="btn btn-default">Feedbacks</a>
-        </div>
-    </nav>
-</div>
+<ul class="nav nav-pills">
+    <li>
+        <a ng-link="['AdminProducts']">Products</a>
+    </li>
+    <li>
+        <a ng-link="['AdminReviews']">Reviews</a>
+    </li>
+    <li>
+        <a ng-link="['AdminComments']">Comments</a>
+    </li>
+    <li>
+        <a ng-link="['AdminFeedbacks']">Feedbacks</a>
+    </li>
+    <li>
+        <a ng-link="['AdminOrders']">Orders</a>
+    </li>
+</ul>
+<hr>
 <ng-outlet></ng-outlet>

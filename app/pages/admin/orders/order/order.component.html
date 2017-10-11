@@ -1,0 +1,76 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-success" ng-click="$ctrl.setOrderStatus('completed')">
+        <span class="glyphicon glyphicon-ok"></span>
+        Completed
+    </button>
+    <button type="button" class="btn btn-info" ng-click="$ctrl.setOrderStatus('waiting')">
+        <span class="glyphicon glyphicon-time"></span>
+        Waiting
+    </button>
+    <button type="button" class="btn btn-warning" ng-click="$ctrl.setOrderStatus('cancelled')">
+        <span class="glyphicon glyphicon-remove"></span>
+        Cancelled
+    </button>
+    <button type="button" class="btn btn-danger" ng-click="$ctrl.deleteOrder()">
+        <span class="glyphicon glyphicon-trash"></span>
+        Delete order
+    </button>
+</div>
+<hr>
+<div class="panel panel-default">
+    <div class="panel-heading">Order details</div>
+    <div class="panel-body">
+        <ul class="list-unstyled">
+            <li>
+                <strong>Status:</strong> {{$ctrl.order.status}}
+            </li>
+            <li>
+                <strong>Date:</strong> {{$ctrl.order.date | date : "MMM d, y h:mm:ss a"}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Customer details</div>
+    <div class="panel-body">
+        <ul class="list-unstyled">
+            <li>
+                <strong>Name:</strong> {{$ctrl.order.name}}
+            </li>
+            <li>
+                <strong>Phone number:</strong> {{$ctrl.order.phone}}
+            </li>
+            <li>
+                <a href="mailto:{{$ctrl.order.email}}"><strong>Email:</strong> {{$ctrl.order.email}}</a>
+            </li>
+            <li>
+                <strong>Address:</strong> {{$ctrl.order.address}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Cart</div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+                <th class="admin-order-product-id">ID</th>
+                <th>Name</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in $ctrl.order.cart">
+                    <td class="admin-order-product-id">
+                        <a ng-if="product.id" ng-link="['AdminProduct', {id: product.id}]">{{product.id}}</a>
+                        <span class="text-warning" ng-if="!product.id">ID not found</span>
+                    </td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="text-success" ng-if="$ctrl.order">
+            <strong>Total price:</strong> ${{$ctrl.totalPrice($ctrl.order.cart)}}
+        </h4>
+    </div>
+</div>

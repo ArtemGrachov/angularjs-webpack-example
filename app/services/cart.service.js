@@ -12,7 +12,7 @@ export default function (productsService) {
         this.updateStorage();
     }
     this.clearCart = function () {
-        this.cart = [];
+        this.cart.splice(0, this.cart.length);
         this.updateStorage();
     }
     this.getStorage = function () {

@@ -30,6 +30,15 @@ export default {
             path: 'feedbacks',
             component: 'appAdminFeedbacks',
             name: 'AdminFeedbacks'
+        }, {
+            path: 'orders/:id',
+            component: 'appAdminOrder',
+            name: 'AdminOrder'
+        },
+        {
+            path: 'orders',
+            component: 'appAdminOrders',
+            name: 'AdminOrders'
         }
     ]
 }

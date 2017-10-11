@@ -35,25 +35,11 @@
   ],
   "comments": [
     {
-      "id": "0",
-      "name": "John Doe",
-      "email": "john_doe@mail.com",
-      "productId": "0",
-      "text": "Excepteur est eiusmod dolore veniam aute sunt in est aute exercitation."
-    },
-    {
       "name": "Admin",
       "email": "grachov2195@gmail.com",
       "text": "qqqqq",
       "productId": "0",
       "id": "ryXm1ytn-"
-    },
-    {
-      "name": "Artem",
-      "email": "grachov2195@gmail.com",
-      "text": "Nice laptop!",
-      "productId": "1",
-      "id": "BJhP1yF2W"
     },
     {
       "name": "User",
@@ -101,21 +87,64 @@
       }
     }
   ],
-  "feedbacks": [
-    {
-      "name": "Guest",
-      "email": "qwerty@qw.qq",
-      "subject": "Hello?",
-      "text": "Hi",
-      "id": 1
-    }
-  ],
+  "feedbacks": [],
   "orders": [
     {
-      "name": "User",
-      "phone": "5555555555",
-      "address": "dddd",
+      "name": "Lorem Ipsum",
+      "email": "ggg@ggg.ggg",
+      "phone": "555-555-55",
+      "address": "Lorem Ipsum str., 24a",
+      "cart": [
+        {
+          "id": "1",
+          "name": "Laptop",
+          "price": 3999.99
+        },
+        {
+          "id": "B1uEagchZ",
+          "name": "Cup",
+          "price": 1.99
+        },
+        {
+          "id": "B1uEagchZ",
+          "name": "Cup",
+          "price": 1.99
+        }
+      ],
+      "status": "completed",
+      "date": "2017-10-11T08:52:32.725Z",
       "id": 1
+    },
+    {
+      "name": "User User",
+      "email": "ggg@ggg.ggg",
+      "phone": "555-555-555",
+      "address": "Lorem Iposum str., 55",
+      "cart": [
+        {
+          "id": "Byko28oh-",
+          "name": "HP Printer",
+          "price": 55.79
+        },
+        {
+          "id": "Byko28oh-",
+          "name": "HP Printer",
+          "price": 55.79
+        },
+        {
+          "id": "1",
+          "name": "Laptop",
+          "price": 3999.99
+        },
+        {
+          "id": "B1uEagchZ",
+          "name": "Cup",
+          "price": 1.99
+        }
+      ],
+      "status": "cancelled",
+      "date": "2017-10-11T08:56:19.053Z",
+      "id": 2
     }
   ]
 }

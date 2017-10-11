@@ -2,7 +2,7 @@ export default {
     bindings: {
         $router: '<'
     },
-    controller: function (productsService, $location) {
+    controller: function (productsService) {
         this.$routerOnActivate = function (next) {
             if (next.params.id) {
                 productsService.getProduct(next.params.id)
