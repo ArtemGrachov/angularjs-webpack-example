@@ -10,7 +10,7 @@
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
+                    <span class="glyphicon glyphicon-user"></span>
                 </span>
                 <input type="text" id="name" placeholder="Enter your name" class="form-control" ng-required="true
        " ng-model="$ctrl.orderForm.name">
@@ -19,7 +19,7 @@
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-envelope"></span>
+                    <span class="glyphicon glyphicon-envelope"></span>
                 </span>
                 <input type="email" id="name" placeholder="Enter your email" class="form-control" ng-required="true
        " ng-model="$ctrl.orderForm.email">
@@ -28,7 +28,7 @@
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon">
-                <span class="glyphicon glyphicon-earphone"></span>
+                    <span class="glyphicon glyphicon-earphone"></span>
                 </span>
                 <input type="text" id="phone" placeholder="Enter your phone number" class="form-control
        " ng-required="true" ng-model="$ctrl.orderForm.phone">
@@ -37,13 +37,13 @@
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon">
-                <span class="glyphicon glyphicon-map-marker"></span>
+                    <span class="glyphicon glyphicon-map-marker"></span>
                 </span>
                 <input type="text" id="address" placeholder="Enter your address" class="form-control" ng-required="true
        " ng-model="$ctrl.orderForm.address">
             </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-block btn-success" ng-disabled="ordForm.$invalid" ng-click="$ctrl.sendOrder()">
+        <button type="submit" class="btn btn-lg btn-block btn-success" ng-disabled="ordForm.$invalid" ng-click="$ctrl.confirmOrder()">
             <span class="glyphicon glyphicon-ok"></span>
             Send order!
         </button>

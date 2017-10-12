@@ -2,7 +2,7 @@ export default {
     bindings: {
         $router: '<'
     },
-    controller: function (cartService, ordersService) {
+    controller: function (cartService, ordersService, modalService) {
         this.cart = cartService.cart;
         this.total = cartService.calcTotal;
         this.sendOrder = function () {
@@ -19,6 +19,26 @@ export default {
                     this.$router.navigate(['Products'])
                 })
         };
+        this.confirmOrder = function () {
+            modalService.createWindow({
+                title: 'Are you sure?',
+                msg: `Total price: $${this.total()} for ${this.cart.length} products.`,
+                btns: [{
+                        text: 'Yes',
+                        res: true,
+                        style: 'success'
+                    },
+                    {
+                        text: 'No',
+                        style: 'danger'
+                    }
+                ]
+            }).then(res => {
+                if (res) {
+                    this.sendOrder();
+                }
+            })
+        }
         this.removeFromCart = function (index) {
             cartService.removeFromCart(index);
         }

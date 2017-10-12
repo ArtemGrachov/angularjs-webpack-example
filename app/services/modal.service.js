@@ -1,4 +1,4 @@
-export default function ($rootScope, $compile) {
+export default function ($rootScope, $compile, $q) {
     this.modals = {
         windows: [],
         notifications: []
@@ -6,7 +6,9 @@ export default function ($rootScope, $compile) {
     this.activeModal = null;
 
     this.createWindow = function (config) {
+        config.deffered = $q.defer();
         this.createModal(config, 'windows');
+        return config.deffered.promise;
     }
     this.createNotification = function (config) {
         this.createModal(config, 'notifications');

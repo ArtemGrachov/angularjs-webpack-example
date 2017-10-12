@@ -14,10 +14,8 @@ export default {
             }
         }
         this.click = function (btn) {
-            if (btn.action) {
-                btn.action();
-            }
-            if (btn.close) {
+            this.config.deffered.resolve(btn.res)
+            if (!btn.keepOpen) {
                 modalService.deleteModal(this.config.id, 'windows')
             }
         }

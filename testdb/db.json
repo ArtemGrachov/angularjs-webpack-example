@@ -142,9 +142,25 @@
           "price": 1.99
         }
       ],
-      "status": "cancelled",
+      "status": "waiting",
       "date": "2017-10-11T08:56:19.053Z",
       "id": 2
+    },
+    {
+      "name": "Admin",
+      "email": "gg@gg.gg",
+      "phone": "55",
+      "address": "yyy",
+      "cart": [
+        {
+          "id": "0",
+          "name": "TV",
+          "price": 1999.98
+        }
+      ],
+      "status": "cancelled",
+      "date": "2017-10-12T12:52:23.314Z",
+      "id": 3
     }
   ]
 }
