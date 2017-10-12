@@ -49,13 +49,6 @@
       "id": "HJsec-t3b"
     },
     {
-      "name": "User",
-      "email": "test@test.ua",
-      "text": "blah blah blah",
-      "productId": "rJdXjx5hb",
-      "id": "B1lTWNchW"
-    },
-    {
       "name": "Guest",
       "email": "gg@gg.gg",
       "text": "Hi",
@@ -87,7 +80,22 @@
       }
     }
   ],
-  "feedbacks": [],
+  "feedbacks": [
+    {
+      "name": "Guest",
+      "email": "ggg@gggg.ll",
+      "subject": "ggg",
+      "text": "gggg",
+      "id": 1
+    },
+    {
+      "name": "Guest",
+      "email": "ggg@gggg.ll",
+      "subject": "hello",
+      "text": "hi",
+      "id": 2
+    }
+  ],
   "orders": [
     {
       "name": "Lorem Ipsum",
@@ -145,22 +153,6 @@
       "status": "waiting",
       "date": "2017-10-11T08:56:19.053Z",
       "id": 2
-    },
-    {
-      "name": "Admin",
-      "email": "gg@gg.gg",
-      "phone": "55",
-      "address": "yyy",
-      "cart": [
-        {
-          "id": "0",
-          "name": "TV",
-          "price": 1999.98
-        }
-      ],
-      "status": "cancelled",
-      "date": "2017-10-12T12:52:23.314Z",
-      "id": 3
     }
   ]
 }

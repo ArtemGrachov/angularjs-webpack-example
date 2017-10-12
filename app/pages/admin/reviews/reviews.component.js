@@ -16,7 +16,7 @@ export default {
         }
         this.deleteReview = function (id) {
             reviewsService.deleteReview(id)
-                .then(res => this.refreshReviews())
+                .then(res => res ? this.refreshReviews() : null)
         }
     },
     template: require('./reviews.component.html')

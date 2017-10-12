@@ -1,4 +1,4 @@
-export default function ($http) {
+export default function ($http, modalService) {
     this.get = function (url) {
         return $http({
             method: 'GET',
@@ -20,9 +20,26 @@ export default function ($http) {
         })
     }
     this.delete = function (url) {
-        return $http({
-            method: 'DELETE',
-            url: `http://localhost:3000/${url}`
+        return modalService.createWindow({
+            title: 'Confirm deleting',
+            msg: 'Are you sure to delete this item?',
+            btns: [{
+                    text: 'Yes',
+                    res: true
+                },
+                {
+                    text: 'No'
+                }
+            ]
+        }).then(res => {
+            if (res) {
+                return $http({
+                    method: 'DELETE',
+                    url: `http://localhost:3000/${url}`
+                })
+            } else {
+                return false
+            }
         })
     }
 }

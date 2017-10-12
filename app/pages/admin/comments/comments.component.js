@@ -21,7 +21,7 @@ export default {
         }
         this.deleteComment = function (id) {
             commentsService.deleteComment(id)
-                .then(res => this.refreshComments());
+                .then(res => res ? this.refreshComments() : null);
         }
     },
     template: require('./comments.component.html')

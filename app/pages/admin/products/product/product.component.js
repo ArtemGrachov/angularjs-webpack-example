@@ -25,15 +25,20 @@ export default {
         this.submitProduct = function () {
             if (this.product && this.product.id) {
                 productsService.updateProduct(this.product)
-                    .then(res => this.$router.navigate(['AdminProducts']));
+                    .then(res => this.navToList(res));
             } else {
                 productsService.addProduct(this.product)
-                    .then(res => this.$router.navigate(['AdminProducts']));
+                    .then(res => this.navToList(res));
+            }
+        }
+        this.navToList = function (res) {
+            if (res) {
+                this.$router.navigate(['AdminProducts']);
             }
         }
         this.deleteProduct = function () {
             productsService.deleteProduct(this.product.id)
-                .then(res => this.$router.navigate(['AdminProducts']))
+                .then(res => this.navToList(res))
         }
     },
     template: require('./product.component.html')

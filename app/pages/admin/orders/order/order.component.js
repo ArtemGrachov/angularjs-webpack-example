@@ -18,7 +18,7 @@ export default {
         }
         this.deleteOrder = function () {
             ordersService.deleteOrder(this.order.id)
-                .then(res => this.$router.navigate(['AdminOrders']));
+                .then(res => res ? this.$router.navigate(['AdminOrders']) : false);
         }
     },
     template: require('./order.component.html')
