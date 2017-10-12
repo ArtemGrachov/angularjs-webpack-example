@@ -39,6 +39,7 @@ import CommentsService from './services/comments.service';
 import ReviewsService from './services/reviews.service';
 import FeedbacksService from './services/feedbacks.service';
 import OrdersService from './services/orders.service';
+import ModalService from './services/modal.service';
 
 angular
     .module('app', [ngComponentRouter])
@@ -50,6 +51,7 @@ angular
     .service('reviewsService', ReviewsService)
     .service('feedbacksService', FeedbacksService)
     .service('ordersService', OrdersService)
+    .service('modalService', ModalService)
     .component('app', AppComponent)
     .component('appHeader', HeaderComponent)
     .component('appFooter', FooterComponent)
