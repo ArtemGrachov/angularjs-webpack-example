@@ -1,3 +1,5 @@
+import './modal.component.scss';
+
 export default {
     controller: function (modalService, $scope, $element) {
         this.modals = modalService.modals;

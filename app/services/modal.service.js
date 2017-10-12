@@ -33,3 +33,32 @@ export default function ($rootScope, $compile) {
         }
     }
 }
+
+
+// this.testModal = function () {
+//     // modalService.createWindow({
+//     //     title: 'About alert',
+//     //     msg: 'This modal window was called from About page to test how does modals component and service works',
+//     //     bgClose: true,
+//     //     btns: [{
+//     //         text: 'Left button (console.log)',
+//     //         style: 'default',
+//     //         action: () => console.log('LEFT BTN')
+
+//     //     }, {
+//     //         text: 'Right button (console.log and close)',
+//     //         style: 'info',
+//     //         action: () => console.log('CLOSE'),
+//     //         close: true
+//     //     }]
+//     // });
+//     // modalService.createWindow({
+//     //     title: 'About alert 2',
+//     //     msg: 'This text must be rendered only in second window!'
+//     // });
+//     // modalService.createNotification({
+//     //     strong: 'Hello!',
+//     //     text: 'It is test notification ' + new Date().getTime()
+//     // })
+// }
+// // test

@@ -1,8 +1,7 @@
 export default {
     bindings: {
-        config: '=',
-        id: '=',
-        del: '&'
+        config: '<',
+        id: '<'
     },
     controller: function ($scope, $element, modalService) {
         this.$onInit = function () {
