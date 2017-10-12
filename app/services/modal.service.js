@@ -1,7 +1,13 @@
 export default function ($rootScope, $compile) {
-    this.createModal = function () {
-        const modalScope = $rootScope.$new({}),
-            body = angular.element(document).find('body');
-        body.append($compile('<app-modal></app-modal>')(modalScope));
+    this.createModal = function (config) {
+        const scope = $rootScope.$new({});
+        scope.config = config;
+        angular
+            .element(document)
+            .find('body')
+            .append(
+                $compile('<app-modal config="config"></app-modal>')
+                (scope)
+            );
     }
 }

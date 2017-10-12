@@ -1,4 +1,4 @@
-<div class="modal" style="display: block;" id="{{$ctrl.config.id}}">
+<div class="modal" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer" ng-if="$ctrl.config.btns">
                 <div class="btn-group">
-                    <button type="button" ng-repeat="btn in $ctrl.config.btns" ng-click="btn.action()" class="btn btn-{{btn.style}}">{{btn.text}}</button>
+                    <button type="button" ng-repeat="btn in $ctrl.config.btns" ng-click="$ctrl.click(btn)" class="btn btn-{{btn.style}}">{{btn.text}}</button>
                 </div>
             </div>
         </div>
