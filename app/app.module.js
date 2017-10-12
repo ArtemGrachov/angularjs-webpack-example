@@ -25,6 +25,7 @@ import AdminReviewsComponent from './pages/admin/reviews/reviews.component';
 import AdminFeedbacksComponent from './pages/admin/feedbacks/feedbacks.component';
 import AdminOrdersComponent from './pages/admin/orders/orders.component';
 import AdminOrderComponent from './pages/admin/orders/order/order.component';
+import ModalComponent from './elements/modal/modal.component';
 
 // page inner elements
 import CommentsComponent from './elements/comments/comments.component';
@@ -68,3 +69,4 @@ angular
     .component('appAdminFeedbacks', AdminFeedbacksComponent)
     .component('appAdminOrders', AdminOrdersComponent)
     .component('appAdminOrder', AdminOrderComponent)
+    .component('appModal', ModalComponent)
