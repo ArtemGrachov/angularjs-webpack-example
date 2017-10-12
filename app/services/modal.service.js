@@ -3,7 +3,7 @@ export default function ($rootScope, $compile) {
         windows: [],
         notifications: []
     }
-    this.activeModal = false;
+    this.activeModal = null;
 
     this.createWindow = function (config) {
         this.createModal(config, 'windows');
@@ -15,21 +15,21 @@ export default function ($rootScope, $compile) {
         config.id = Math.ceil((Math.random() * new Date().getTime()));
         this.modals[type].push(config);
         if (!this.activeModal) {
-            const scope = $rootScope.$new({});
-            this.activeModal = true;
             angular
                 .element(document)
                 .find('body')
                 .append(
                     $compile('<app-modal></app-modal>')
-                    (scope)
+                    ($rootScope.$new({}))
                 );
         }
     }
     this.deleteModal = function (id, type) {
         this.modals[type] = this.modals[type].filter(modal => modal.id != id);
         if (this.modals.windows.length == 0 && this.modals.notifications.length == 0) {
-            this.activeModal = false;
+            this.activeModal.scope.$destroy();
+            this.activeModal.el.remove();
+            this.activeModal = null;
         }
     }
 }

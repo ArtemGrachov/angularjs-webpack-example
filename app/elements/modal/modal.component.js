@@ -1,11 +1,10 @@
 export default {
     controller: function (modalService, $scope, $element) {
         this.modals = modalService.modals;
-        this.deleteModal = function (id, type) {
-            modalService.deleteModal(id, type);
-            if (this.modals.windows.length == 0) {
-                $scope.$destroy();
-                $element.remove();
+        this.$onInit = function () {
+            modalService.activeModal = {
+                scope: $scope,
+                el: $element
             }
         }
     },

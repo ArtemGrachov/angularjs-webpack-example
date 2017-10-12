@@ -19,7 +19,7 @@ export default {
                 btn.action();
             }
             if (btn.close) {
-                this.del();
+                modalService.deleteModal(this.config.id, 'windows')
             }
         }
     },
