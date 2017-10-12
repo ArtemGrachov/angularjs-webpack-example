@@ -31,6 +31,11 @@ export default {
             path: '/order/',
             component: 'appOrder',
             name: 'Order'
+        },
+        {
+            path: '/auth',
+            component: 'appAuth',
+            name: 'Auth'
         }
     ]
 }

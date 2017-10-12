@@ -4,7 +4,6 @@ export default function ($rootScope, $compile, $q) {
         notifications: []
     }
     this.activeModal = null;
-
     this.createWindow = function (config) {
         config.deffered = $q.defer();
         this.createModal(config, 'windows');
@@ -25,6 +24,7 @@ export default function ($rootScope, $compile, $q) {
                     ($rootScope.$new({}))
                 );
         }
+        $rootScope.$apply();
     }
     this.deleteModal = function (id, type) {
         this.modals[type] = this.modals[type].filter(modal => modal.id != id);

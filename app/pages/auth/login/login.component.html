@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Login</div>
+    <form class="panel-body" ng-submit="$ctrl.login()">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+                <input type="text" placeholder="Enter your login" ng-model="$ctrl.loginForm.login" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-lock"></span>
+                </div>
+                <input type="password" placeholder="Enter your password" ng-model="$ctrl.loginForm.password" class="form-control">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-block btn-success">
+            <span class="glyphicon glyphicon-ok"></span>
+            Login
+        </button>
+    </form>
+</div>

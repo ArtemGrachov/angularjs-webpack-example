@@ -25,6 +25,9 @@ import AdminReviewsComponent from './pages/admin/reviews/reviews.component';
 import AdminFeedbacksComponent from './pages/admin/feedbacks/feedbacks.component';
 import AdminOrdersComponent from './pages/admin/orders/orders.component';
 import AdminOrderComponent from './pages/admin/orders/order/order.component';
+import AuthComponent from './pages/auth/auth.component';
+import AuthLoginComponent from './pages/auth/login/login.component';
+import AuthRegComponent from './pages/auth/reg/reg.component';
 import ModalComponent from './elements/modal/modal.component';
 import ModalWindowComponent from './elements/modal/window/window.component';
 import ModalNotificationComponent from './elements/modal/notification/notification.component';
@@ -42,6 +45,7 @@ import ReviewsService from './services/reviews.service';
 import FeedbacksService from './services/feedbacks.service';
 import OrdersService from './services/orders.service';
 import ModalService from './services/modal.service';
+import AuthService from './services/auth.service';
 
 angular
     .module('app', [ngComponentRouter])
@@ -54,6 +58,7 @@ angular
     .service('feedbacksService', FeedbacksService)
     .service('ordersService', OrdersService)
     .service('modalService', ModalService)
+    .service('authService', AuthService)
     .component('app', AppComponent)
     .component('appHeader', HeaderComponent)
     .component('appFooter', FooterComponent)
@@ -73,6 +78,9 @@ angular
     .component('appAdminFeedbacks', AdminFeedbacksComponent)
     .component('appAdminOrders', AdminOrdersComponent)
     .component('appAdminOrder', AdminOrderComponent)
+    .component('appAuth', AuthComponent)
+    .component('appAuthReg', AuthRegComponent)
+    .component('appAuthLogin', AuthLoginComponent)
     .component('appModal', ModalComponent)
     .component('appModalWindow', ModalWindowComponent)
     .component('appModalNotification', ModalNotificationComponent)
