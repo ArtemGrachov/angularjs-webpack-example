@@ -1,16 +1,25 @@
 export default {
     bindings: {
         config: '=',
-        id: '='
+        id: '=',
+        del: '&'
     },
     controller: function ($scope, $element, modalService) {
-        console.log('modal window component');
+        this.$onInit = function () {
+            if (!this.config.btns) {
+                this.config.btns = [{
+                    text: 'Close',
+                    close: true,
+                    style: 'primary'
+                }]
+            }
+        }
         this.click = function (btn) {
             if (btn.action) {
                 btn.action();
             }
             if (btn.close) {
-                // this.close();
+                this.del();
             }
         }
     },

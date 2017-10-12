@@ -15,8 +15,8 @@ export default function ($rootScope, $compile) {
         config.id = Math.ceil((Math.random() * new Date().getTime()));
         this.modals[type].push(config);
         if (!this.activeModal) {
-            this.activeModal = true;
             const scope = $rootScope.$new({});
+            this.activeModal = true;
             angular
                 .element(document)
                 .find('body')
@@ -24,6 +24,12 @@ export default function ($rootScope, $compile) {
                     $compile('<app-modal></app-modal>')
                     (scope)
                 );
+        }
+    }
+    this.deleteModal = function (id, type) {
+        this.modals[type] = this.modals[type].filter(modal => modal.id != id);
+        if (this.modals.windows.length == 0 && this.modals.notifications.length == 0) {
+            this.activeModal = false;
         }
     }
 }

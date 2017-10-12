@@ -1,3 +1,3 @@
 <div class="modal" style="display: block; background: rgba(0,0,0,.4);" ng-if="$ctrl.modals.windows.length > 0">
-    <app-modal-window ng-repeat="window in $ctrl.modals.windows track by $index" config="window"></app-modal-window>
+    <app-modal-window ng-repeat="window in $ctrl.modals.windows track by $index" config="window" del="$ctrl.deleteModal(window.id, 'windows')"></app-modal-window>
 </div>
