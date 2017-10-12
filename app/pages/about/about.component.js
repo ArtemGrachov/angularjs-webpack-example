@@ -17,7 +17,7 @@ export default {
         this.refreshReviews();
         // test
         this.testModal = function () {
-            modalService.createModal({
+            modalService.createWindow({
                 title: 'About alert',
                 msg: 'This modal window was called from About page to test how does modals component and service works',
                 bgClose: true,
@@ -29,11 +29,14 @@ export default {
                 }, {
                     text: 'Right button (console.log and close)',
                     style: 'info',
-                    action: () => console.log('close!'),
+                    action: () => console.log('CLOSE'),
                     close: true
                 }]
             });
-
+            modalService.createWindow({
+                title: 'About alert 2',
+                msg: 'This text must be rendered only in second window!'
+            });
         }
         // test
     },

@@ -1,19 +1,10 @@
 export default {
-    bindings: {
-        config: '='
-    },
-    controller: function ($scope, $element) {
-        this.close = function () {
-            $scope.$destroy();
-            $element.remove();
-        }
-        this.click = function (btn) {
-            if (btn.action) {
-                btn.action();
-            }
-            if (btn.close) {
-                this.close();
-            }
+    controller: function (modalService) {
+        this.modals = modalService.modals;
+        console.log(this.modals);
+
+        this.$watch = function () {
+            console.log('changes!')
         }
     },
     template: require('./modal.component.html')
