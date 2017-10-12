@@ -26,8 +26,8 @@ import AdminFeedbacksComponent from './pages/admin/feedbacks/feedbacks.component
 import AdminOrdersComponent from './pages/admin/orders/orders.component';
 import AdminOrderComponent from './pages/admin/orders/order/order.component';
 import ModalComponent from './elements/modal/modal.component';
-import ModalWindowComponent from './elements/modal/modal-window/modal-window.component';
-import ModalNotifyComponent from './elements/modal/modal-notify/modal-notify.component';
+import ModalWindowComponent from './elements/modal/window/window.component';
+import ModalNotificationComponent from './elements/modal/notification/notification.component';
 
 // page inner elements
 import CommentsComponent from './elements/comments/comments.component';
@@ -75,4 +75,4 @@ angular
     .component('appAdminOrder', AdminOrderComponent)
     .component('appModal', ModalComponent)
     .component('appModalWindow', ModalWindowComponent)
-    .component('appModalNotify', ModalNotifyComponent)
+    .component('appModalNotification', ModalNotificationComponent)

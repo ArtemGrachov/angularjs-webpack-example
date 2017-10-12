@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                {{$ctrl.config.title}}
+            </h4>
+        </div>
+        <div class="modal-body">
+            <p>
+                {{$ctrl.config.msg}}
+            </p>
+        </div>
+        <div class="modal-footer" ng-if="$ctrl.config.btns">
+            <div class="btn-group">
+                <button type="button" ng-repeat="btn in $ctrl.config.btns" ng-click="$ctrl.click(btn)" class="btn btn-{{btn.style}}">{{btn.text}}</button>
+            </div>
+        </div>
+    </div>
+</div>

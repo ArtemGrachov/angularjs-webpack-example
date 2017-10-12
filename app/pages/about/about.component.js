@@ -1,5 +1,5 @@
 export default {
-    controller: function (reviewsService) {
+    controller: function (reviewsService, $compile, $rootScope, $scope, modalService) {
         this.sendReview = function (data) {
             reviewsService.addReview(data)
                 .then(

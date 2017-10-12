@@ -1,3 +1,6 @@
-<div class="modal" ng-if="$ctrl.modals.windows.length >0">
-    <app-modal-window config="window" ng-repeat="window in $ctrl.modals.windows"></app-modal-window>
+<div class="modal" ng-if="$ctrl.modals.windows.length > 0">
+    <app-modal-window ng-repeat="window in $ctrl.modals.windows track by $index" config="window"></app-modal-window>
+</div>
+<div class="notifications-wrap" ng-if="$ctrl.modals.notifications.length >0">
+    <app-modal-notification ng-repeat="ntf in $ctrl.modals.notifications " config="ntf"></app-modal-notification>
 </div>
