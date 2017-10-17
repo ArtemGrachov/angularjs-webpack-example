@@ -1,4 +1,26 @@
-export default function ($q) {
+export default function () {
+    function Observable() {
+        this.subscribers = [];
+        this.emit = function (data) {
+            this.subscribers.forEach(sub => sub(data))
+        }
+        this.subscribe = function (sub) {
+            this.subscribers.push(sub);
+        }
+        this.unsubscribe = function (sub) {
+            this
+                .subscribers
+                .splice(
+                    this
+                    .subscribers
+                    .indexOf(sub),
+                    1
+                )
+        }
+    }
+    this.userObs = new Observable();
+
+
     this.saveToken = function (token) {
         return localStorage.setItem('authorization', JSON.stringify(token));
     }
@@ -16,6 +38,7 @@ export default function ($q) {
             .getUser(token)
             .then(res => {
                 this.user = res;
+                this.userObs.emit();
                 console.log('load user:', res);
             })
     }
@@ -32,8 +55,14 @@ export default function ($q) {
     }
 
     this.logout = function () {
-        this.deleteToken();
-        console.log('logout', this.getToken());
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                this.deleteToken();
+                this.user = null;
+                this.userObs.emit();
+                console.log('logout', this.getToken());
+            }, 500);
+        })
     }
 
     this.reg = function (data) {
@@ -46,7 +75,7 @@ export default function ($q) {
                 }
             )
     }
-    // test
+
     this.testBackendCheck = function (cat) {
         const check = (this.getToken() == 'adminToken' || (cat == 'user' && this.getToken() == 'userToken'))
         console.log('test token check', check);
@@ -69,10 +98,10 @@ export default function ($q) {
         reg: function (data) {
             return new Promise((res, rej) => {
                 setTimeout(() => {
-                    if (data.login == 'new' && password == '333') {
-                        res('tokenTokenToek');
+                    if (data.login == 'new' && data.password == '333') {
+                        res('userToken');
                     } else {
-                        rej(false);
+                        rej('Test registration failed!');
                     }
                 }, 500)
             })
@@ -97,5 +126,4 @@ export default function ($q) {
             })
         }
     }
-    // test
 }

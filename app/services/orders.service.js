@@ -8,20 +8,20 @@ export default function (productsService, cartService, dataService) {
         }
     }
     this.updateOrder = function (data) {
-        return dataService.update(this.orderUrl + data.id, data);
+        return dataService.update(this.orderUrl + data.id, data, 'admin');
     }
     this.getOrder = function (id) {
-        return dataService.get(this.orderUrl + id)
+        return dataService.get(this.orderUrl + id, 'admin')
             .then(res => {
                 res.date = new Date(res.date);
                 return res;
             });
     }
     this.getOrders = function () {
-        return dataService.get(this.orderUrl);
+        return dataService.get(this.orderUrl, 'admin');
     }
     this.deleteOrder = function (id) {
-        return dataService.delete(this.orderUrl + id);
+        return dataService.delete(this.orderUrl + id, 'admin');
     }
     this.totalPrice = function (cart) {
         let price = 0;

@@ -1,14 +1,24 @@
 <div class="row">
-    <div>
-        <strong>TEST auth:</strong>
-        <ul>
-            <li>Login: Admin, password: 111</li>
-            <li>Login: User, password: 222</li>
-        </ul>
-        <strong>TEST reg:</strong>
-        <ul>
-            <li>Login: New, password: 333</li>
-        </ul>
+    <div class="col-xs-12">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                AUTH TEST
+            </div>
+            <div class="panel-body">
+                <p>
+                    <strong>USER:</strong> {{$ctrl.user}}
+                </p>
+                <strong>TEST auth:</strong>
+                <ul>
+                    <li>Login: admin, password: 111</li>
+                    <li>Login: user, password: 222</li>
+                </ul>
+                <strong>TEST reg:</strong>
+                <ul>
+                    <li>Login: new, password: 333</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="col-md-6">
         <app-auth-login></app-auth-login>

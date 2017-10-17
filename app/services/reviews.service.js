@@ -7,9 +7,9 @@ export default function (dataService) {
         return dataService.post(this.reviewsUrl, data);
     }
     this.updateReview = function (data) {
-        return dataService.update(this.reviewsUrl + data.id, data);
+        return dataService.update(this.reviewsUrl + data.id, data, 'admin');
     }
     this.deleteReview = function (id) {
-        return dataService.delete(this.reviewsUrl + id);
+        return dataService.delete(this.reviewsUrl + id, 'admin');
     }
 }

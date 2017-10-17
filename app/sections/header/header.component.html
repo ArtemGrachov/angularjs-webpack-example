@@ -14,26 +14,31 @@
                 <a ng-link="['Contacts']">Contacts</a>
             </li>
         </ul>
+        <!-- test -->
+        <div style="position: fixed; color: blue; bottom: 20px; right:20px; background: rgba(255,255,255,.5); padding: 10px; border: 1px dashed blue; z-index: 5000">
+            USER: {{$ctrl.user}}
+        </div>
+        <!-- test -->
         <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li ng-if="!$ctrl.user">
                 <a ng-link="['Auth']">
                     <span class="glyphicon glyphicon-lock"></span>
                     Authorize
                 </a>
             </li>
-            <li>
+            <li ng-if="$ctrl.user">
                 <a style="cursor: pointer" ng-click="$ctrl.logout()">
                     <span class="glyphicon glyphicon-lock"></span>
                     Logout
                 </a>
             </li>
-            <li>
+            <li ng-if="$ctrl.user">
                 <a ng-link="['Products']">
                     <span class="glyphicon glyphicon-user"></span>
                     Dashboard
                 </a>
             </li>
-            <li>
+            <li ng-if="$ctrl.user.category == 'admin'">
                 <a ng-link="['Admin']">
                     <span class="glyphicon glyphicon-scale"></span>
                     Admin panel

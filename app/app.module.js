@@ -59,6 +59,12 @@ angular
     .service('ordersService', OrdersService)
     .service('modalService', ModalService)
     .service('authService', AuthService)
+    .run((authService) => {
+        const token = authService.getToken();
+        if (token) {
+            authService.loadUser(token);
+        }
+    })
     .component('app', AppComponent)
     .component('appHeader', HeaderComponent)
     .component('appFooter', FooterComponent)
