@@ -1,4 +1,6 @@
 export default function () {
+    const $this = this;
+
     function Observable() {
         this.subscribers = [];
         this.emit = function (data) {
@@ -20,7 +22,6 @@ export default function () {
     }
     this.userObs = new Observable();
 
-
     this.saveToken = function (token) {
         return localStorage.setItem('authorization', JSON.stringify(token));
     }
@@ -34,24 +35,33 @@ export default function () {
     }
 
     this.loadUser = function (token) {
-        fakeAuth
+        console.log('load user token', token)
+        return fakeAuth
             .getUser(token)
             .then(res => {
-                this.user = res;
-                this.userObs.emit();
                 console.log('load user:', res);
+                $this.user = res;
+                $this.userObs.emit();
+                return res;
             })
     }
 
     this.login = function (data) {
         return fakeAuth.login(data)
-            .then(
-                res => {
-                    this.saveToken(res);
-                    this.loadUser(res);
-                    console.log('login data', data)
-                }
-            )
+            .then(res => {
+                this.saveToken(res);
+                return res
+            })
+            .then(this.loadUser)
+    }
+
+    this.reg = function (data) {
+        return fakeAuth.reg(data)
+            .then(res => {
+                this.saveToken(res);
+                return res
+            })
+            .then(this.loadUser)
     }
 
     this.logout = function () {
@@ -63,17 +73,6 @@ export default function () {
                 console.log('logout', this.getToken());
             }, 500);
         })
-    }
-
-    this.reg = function (data) {
-        return fakeAuth.reg(data)
-            .then(
-                res => {
-                    this.saveToken(res);
-                    this.loadUser(res);
-                    console.log('reg data', data)
-                }
-            )
     }
 
     this.testBackendCheck = function (cat) {
