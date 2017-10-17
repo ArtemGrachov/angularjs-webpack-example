@@ -1,33 +1,101 @@
-export default function () {
+export default function ($q) {
+    this.saveToken = function (token) {
+        return localStorage.setItem('authorization', JSON.stringify(token));
+    }
+
+    this.getToken = function (token) {
+        return JSON.parse(localStorage.getItem('authorization'));
+    }
+
+    this.deleteToken = function () {
+        localStorage.clear('authorization');
+    }
+
+    this.loadUser = function (token) {
+        fakeAuth
+            .getUser(token)
+            .then(res => {
+                this.user = res;
+                console.log('load user:', res);
+            })
+    }
+
     this.login = function (data) {
-        console.log(data);
-        return new Promise(
-            function (res, rej) {
-                setTimeout(() => {
-                    if (data.login != 'zzz') {
-                        res(true)
-                    } else {
-                        rej('test error')
-                    }
-                }, 700)
-            }
-        );
+        return fakeAuth.login(data)
+            .then(
+                res => {
+                    this.saveToken(res);
+                    this.loadUser(res);
+                    console.log('login data', data)
+                }
+            )
     }
+
+    this.logout = function () {
+        this.deleteToken();
+        console.log('logout', this.getToken());
+    }
+
     this.reg = function (data) {
-        console.log(data);
-        return new Promise(
-            function (res, rej) {
+        return fakeAuth.reg(data)
+            .then(
+                res => {
+                    this.saveToken(res);
+                    this.loadUser(res);
+                    console.log('reg data', data)
+                }
+            )
+    }
+    // test
+    this.testBackendCheck = function (cat) {
+        const check = (this.getToken() == 'adminToken' || (cat == 'user' && this.getToken() == 'userToken'))
+        console.log('test token check', check);
+        return check;
+    }
+    const fakeAuth = {
+        login: function (data) {
+            return new Promise((res, rej) => {
                 setTimeout(() => {
-                    if (data.login != 'zzz') {
-                        res(true)
+                    if (data.login == 'admin' && data.password == '111') {
+                        res('adminToken');
+                    } else if (data.login == 'user' && data.password == '222') {
+                        res('userToken');
                     } else {
-                        rej('test error')
+                        rej('Test authentication failed!');
                     }
-                }, 700)
-            }
-        );
+                }, 500);
+            })
+        },
+        reg: function (data) {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    if (data.login == 'new' && password == '333') {
+                        res('tokenTokenToek');
+                    } else {
+                        rej(false);
+                    }
+                }, 500)
+            })
+        },
+        getUser: function (token) {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    if (token == 'adminToken') {
+                        res({
+                            username: 'Admin',
+                            category: 'admin'
+                        })
+                    } else if (token == 'userToken') {
+                        res({
+                            username: 'User',
+                            category: 'user'
+                        })
+                    } else {
+                        rej('Get user failed!')
+                    }
+                }, 500)
+            })
+        }
     }
-    this.getUser = function (id) {
-        console.log(id);
-    }
+    // test
 }

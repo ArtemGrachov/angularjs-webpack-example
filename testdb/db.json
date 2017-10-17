@@ -31,6 +31,14 @@
       "imgUrl": "https://ih0.redbubble.net/image.45526399.8374/mug,standard,x400,right-bg,ffffff.jpg",
       "description": "Cup with JavaScript logo",
       "id": "B1uEagchZ"
+    },
+    {
+      "price": 8.99,
+      "rating": 0,
+      "name": "Keyboard",
+      "imgUrl": "https://assets.logitech.com/assets/65280/2/g613-wireless-mechanical-gaming-keyboard.png",
+      "description": "Keyboard. Lorem ipsum dolor sit amet.",
+      "id": "ry8oySm6b"
     }
   ],
   "comments": [

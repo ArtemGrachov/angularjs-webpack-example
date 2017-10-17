@@ -13,9 +13,6 @@
             <li>
                 <a ng-link="['Contacts']">Contacts</a>
             </li>
-            <li>
-                <a ng-link="['Admin']">Admin page</a>
-            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
@@ -25,13 +22,19 @@
                 </a>
             </li>
             <li>
+                <a style="cursor: pointer" ng-click="$ctrl.logout()">
+                    <span class="glyphicon glyphicon-lock"></span>
+                    Logout
+                </a>
+            </li>
+            <li>
                 <a ng-link="['Products']">
                     <span class="glyphicon glyphicon-user"></span>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a ng-link="['Products']">
+                <a ng-link="['Admin']">
                     <span class="glyphicon glyphicon-scale"></span>
                     Admin panel
                 </a>

@@ -24,7 +24,7 @@ export default function ($rootScope, $compile, $q) {
                     ($rootScope.$new({}))
                 );
         }
-        $rootScope.$apply();
+        // $rootScope.$apply();
     }
     this.deleteModal = function (id, type) {
         this.modals[type] = this.modals[type].filter(modal => modal.id != id);

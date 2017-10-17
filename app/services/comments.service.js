@@ -7,9 +7,9 @@ export default function (dataService) {
         return dataService.post(this.commentsUrl, data);
     }
     this.updateComment = function (data) {
-        return dataService.update(this.commentsUrl + data.id, data);
+        return dataService.update(this.commentsUrl + data.id, data, 'admin');
     }
     this.deleteComment = function (id) {
-        return dataService.delete(this.commentsUrl + id);
+        return dataService.delete(this.commentsUrl + id, 'admin');
     }
 }

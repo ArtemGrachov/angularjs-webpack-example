@@ -17,16 +17,18 @@ export default function (productsService) {
     }
     this.getStorage = function () {
         const ids = JSON.parse(localStorage.getItem('cart'));
-        this.cart = [];
-        ids.forEach(id => {
-            productsService.getProduct(id)
-                .then(res => this.cart.push({
-                    id: res.id,
-                    price: res.price,
-                    name: res.name,
-                    imgUrl: res.imgUrl
-                }))
-        })
+        if (ids) {
+            this.cart = [];
+            ids.forEach(id => {
+                productsService.getProduct(id)
+                    .then(res => this.cart.push({
+                        id: res.id,
+                        price: res.price,
+                        name: res.name,
+                        imgUrl: res.imgUrl
+                    }))
+            })
+        }
     }
     this.calcTotal = function () {
         let sum = 0;
