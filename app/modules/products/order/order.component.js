@@ -36,6 +36,11 @@ export default {
             }).then(res => {
                 if (res) {
                     this.sendOrder();
+                    modalService.createNotification({
+                        strong: 'Thank you',
+                        text: 'for order!',
+                        style: 'success'
+                    })
                 }
             })
         }

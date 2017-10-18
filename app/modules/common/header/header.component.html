@@ -27,6 +27,12 @@
                     Logout
                 </a>
             </li>
+            <li ng-if="$ctrl.user" ui-sref-active="active">
+                <a style="cursor: pointer" ui-sref="Profile">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Profile
+                </a>
+            </li>
             <li ng-if="$ctrl.user.category == 'admin'" ui-sref-active="active">
                 <a ui-sref="Admin">
                     <span class="glyphicon glyphicon-scale"></span>

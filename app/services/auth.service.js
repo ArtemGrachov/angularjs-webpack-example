@@ -8,6 +8,7 @@ export default function ($http) {
         }
         this.subscribe = function (sub) {
             this.subscribers.push(sub);
+            return sub;
         }
         this.unsubscribe = function (sub) {
             this
@@ -42,13 +43,16 @@ export default function ($http) {
     }
 
     this.loadUser = function (token) {
+        if (!token) {
+            token = this.getToken();
+        }
         // console.log('load user token', token)
         return fakeAuth
             .getUser(token)
             .then(res => {
                 // console.log('load user:', res);
                 $this.user = res;
-                $this.userObs.emit();
+                $this.userObs.emit(res);
                 return res;
             })
     }
@@ -76,7 +80,7 @@ export default function ($http) {
             setTimeout(() => {
                 this.deleteToken();
                 this.user = null;
-                this.userObs.emit();
+                this.userObs.emit(null);
                 // console.log('logout', this.getToken());
             }, 500);
         })
@@ -116,13 +120,21 @@ export default function ($http) {
                 setTimeout(() => {
                     if (token == 'adminToken') {
                         res({
+                            login: 'admin',
                             username: 'Admin',
-                            category: 'admin'
+                            category: 'admin',
+                            fullname: 'Test Admin',
+                            phone: '555-555-55-55',
+                            address: 'Lorem Ipsum str., 24a'
                         })
                     } else if (token == 'userToken') {
                         res({
+                            login: 'admin',
                             username: 'User',
-                            category: 'user'
+                            category: 'user',
+                            fullname: 'Test User',
+                            phone: '444-444-44-44',
+                            address: 'Lorem Ipsum str., 55'
                         })
                     } else {
                         rej('Get user failed!')

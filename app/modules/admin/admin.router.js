@@ -5,15 +5,10 @@ export default function ($stateProvider, $urlRouterProvider) {
             url: '/admin',
             component: 'appAdmin',
             resolve: {
-                test: function (authService, $state) {
+                checkAdmin: function (authService, $state) {
                     return authService
                         .loadUser(authService.getToken())
-                        .then(res => {
-                            if (res.category != 'admin') {
-                                console.log('redir to auth')
-                                $state.go('Auth');
-                            }
-                        })
+                        .catch(err => $state.go('Auth'))
                 }
             }
         })
