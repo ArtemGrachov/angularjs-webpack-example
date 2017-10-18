@@ -3,7 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './sass/main.scss';
 
 import angular from 'angular';
-import ngComponentRouter from 'ngcomponentrouter';
+import uiRouter from '@uirouter/angularjs';
 
 import AppComponent from './app.component';
 // page sections
@@ -47,8 +47,12 @@ import OrdersService from './services/orders.service';
 import ModalService from './services/modal.service';
 import AuthService from './services/auth.service';
 
+//router
+import Router from './app.router';
+
 angular
-    .module('app', [ngComponentRouter])
+    .module('app', [uiRouter])
+    .config(Router)
     .value('$routerRootComponent', 'app')
     .service('dataService', DataService)
     .service('productsService', ProductsService)
@@ -59,7 +63,7 @@ angular
     .service('ordersService', OrdersService)
     .service('modalService', ModalService)
     .service('authService', AuthService)
-    .run((authService) => {
+    .run(function (authService) {
         const token = authService.getToken();
         if (token) {
             authService.loadUser(token);

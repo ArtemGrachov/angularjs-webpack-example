@@ -41,7 +41,8 @@
                 <strong>Phone number:</strong> {{$ctrl.order.phone}}
             </li>
             <li>
-                <a href="mailto:{{$ctrl.order.email}}"><strong>Email:</strong> {{$ctrl.order.email}}</a>
+                <a href="mailto:{{$ctrl.order.email}}">
+                    <strong>Email:</strong> {{$ctrl.order.email}}</a>
             </li>
             <li>
                 <strong>Address:</strong> {{$ctrl.order.address}}
@@ -61,7 +62,7 @@
             <tbody>
                 <tr ng-repeat="product in $ctrl.order.cart">
                     <td class="admin-order-product-id">
-                        <a ng-if="product.id" ng-link="['AdminProduct', {id: product.id}]">{{product.id}}</a>
+                        <a ng-if="product.id" ui-sref="AdminProduct({id: product.id})">{{product.id}}</a>
                         <span class="text-warning" ng-if="!product.id">ID not found</span>
                     </td>
                     <td>{{product.name}}</td>

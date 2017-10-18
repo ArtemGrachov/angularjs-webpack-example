@@ -1,4 +1,4 @@
-export default function () {
+export default function ($http) {
     const $this = this;
 
     function Observable() {
@@ -35,11 +35,11 @@ export default function () {
     }
 
     this.loadUser = function (token) {
-        console.log('load user token', token)
+        // console.log('load user token', token)
         return fakeAuth
             .getUser(token)
             .then(res => {
-                console.log('load user:', res);
+                // console.log('load user:', res);
                 $this.user = res;
                 $this.userObs.emit();
                 return res;
@@ -70,14 +70,13 @@ export default function () {
                 this.deleteToken();
                 this.user = null;
                 this.userObs.emit();
-                console.log('logout', this.getToken());
+                // console.log('logout', this.getToken());
             }, 500);
         })
     }
-
     this.testBackendCheck = function (cat) {
         const check = (this.getToken() == 'adminToken' || (cat == 'user' && this.getToken() == 'userToken'))
-        console.log('test token check', check);
+        // console.log('test token check', check);
         return check;
     }
     const fakeAuth = {

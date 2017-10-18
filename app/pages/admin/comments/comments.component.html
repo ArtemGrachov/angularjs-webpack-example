@@ -5,27 +5,27 @@
             <li class="list-group-item" ng-repeat="comment in $ctrl.comments track by $index">
                 <h4>{{comment.name}}
                     <small class="pull-right">
-                            <ul class="list-inline">
-                                    <li>
-                                        <a ng-link="['AdminProduct',{id:comment.productId}]">
-                                            <span class="glyphicon glyphicon-gift"></span>
-                                            {{comment.productName}}
-                                        </a>
-                                    </li>
-                                <li>
-                                    <a href="mailto:{{comment.email}}">
-                                        <span class="glyphicon glyphicon-envelope"></span>
-                                        {{comment.email}}
-                                    </a>
-                                </li>
-                                <li>
-                                    <button ng-click="$ctrl.editToggle(comment)" class="btn btn-link">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                        Edit
-                                    </button>
-                                </li>
-                            </ul>
-                        </small>
+                        <ul class="list-inline">
+                            <li>
+                                <a ui-sref="AdminProduct({id:comment.productId})">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                    {{comment.productName}}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:{{comment.email}}">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    {{comment.email}}
+                                </a>
+                            </li>
+                            <li>
+                                <button ng-click="$ctrl.editToggle(comment)" class="btn btn-link">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    Edit
+                                </button>
+                            </li>
+                        </ul>
+                    </small>
                 </h4>
                 <p>{{comment.text}}</p>
                 <form ng-if="comment.edit" ng-submit="$ctrl.submitComment(comment)">

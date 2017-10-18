@@ -1,7 +1,7 @@
 export default {
     controller: function () {},
     template: require('./app.component.html'),
-    $routeConfig: [{
+    /*$routeConfig: [{
             path: '/',
             component: 'appProducts',
             name: 'Products',
@@ -37,5 +37,5 @@ export default {
             component: 'appAuth',
             name: 'Auth'
         }
-    ]
+    ]*/
 }

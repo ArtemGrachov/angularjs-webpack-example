@@ -8,7 +8,7 @@ export default {
                         text: res.username + '!',
                         style: 'success'
                     });
-                    console.log('login componetn promise res', res);
+                    // console.log('login componetn promise res', res);
                     $rootScope.$apply();
                 })
                 .catch(

@@ -6,11 +6,13 @@
         <th>Status</th>
     </thead>
     <tbody>
-        <tr ng-repeat="order in $ctrl.orders" ng-link="['AdminOrder', {id: order.id}]" ng-class="$ctrl.setClass(order.status)">
+        <tr ng-repeat="order in $ctrl.orders" ui-sref="AdminOrder({id: order.id})" ng-class="$ctrl.setClass(order.status)">
             <td>{{order.name}}</td>
             <td>{{order.cart.length}}</td>
             <td>${{$ctrl.totalPrice(order.cart)}}</td>
-            <td><strong>{{order.status}}</strong></td>
+            <td>
+                <strong>{{order.status}}</strong>
+            </td>
         </tr>
     </tbody>
 </table>

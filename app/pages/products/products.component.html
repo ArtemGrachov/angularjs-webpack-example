@@ -1,15 +1,18 @@
 <div class="panel-group">
-    <div class="panel panel-default" ng-repeat="product in $ctrl.products" ng-link="['Product',{id: product.id}]">
+    <div class="panel panel-default" ng-repeat="product in $ctrl.products" ui-sref="Product({id: product.id})">
         <div class="panel-heading">{{product.name}}</div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
-                    <img ng-src="{{product.imgUrl}}" ng-alt="{{product.name}}" class="img-thumbnail img-responsive"></div>
+                    <img ng-src="{{product.imgUrl}}" ng-alt="{{product.name}}" class="img-thumbnail img-responsive">
+                </div>
                 <div class="col-md-9">
                     <h2 class="media-heading">
                         {{product.name}}
-                        <span class="badge"><span class="glyphicon glyphicon-usd"></span>{{product.price}}</span>
-                        <span class="badge"><span class="glyphicon glyphicon-star"></span> {{product.rating}}</span>
+                        <span class="badge">
+                            <span class="glyphicon glyphicon-usd"></span>{{product.price}}</span>
+                        <span class="badge">
+                            <span class="glyphicon glyphicon-star"></span> {{product.rating}}</span>
                     </h2>
                     <p>
                         {{product.description}}

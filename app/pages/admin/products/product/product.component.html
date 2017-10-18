@@ -34,7 +34,7 @@
         </div>
         <div class="button-group">
             <button type="submit" class="btn btn-success" ng-disabled="productForm.$invalid">Submit</button>
-            <button type="button" class="btn btn-default" ng-link="['AdminProducts']">Cancel</button>
+            <button type="button" class="btn btn-default" ui-sref="AdminProducts">Cancel</button>
             <button type="button" class="btn btn-info" ng-click="$ctrl.resetProduct()">Reset</button>
             <button type="button" class="btn btn-danger" ng-click="$ctrl.deleteProduct()" ng-if="$ctrl.product.id">Delete</button>
         </div>
