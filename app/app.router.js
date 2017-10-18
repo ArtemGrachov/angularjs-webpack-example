@@ -1,7 +1,8 @@
 export default function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.when('/admin', '/admin/products');
     $stateProvider
         .state('Products', {
-            url: '/',
+            url: '/products',
             component: 'appProducts'
         })
         .state('Product', {
@@ -9,59 +10,75 @@ export default function ($stateProvider, $urlRouterProvider) {
             component: 'appProduct'
         })
         .state('About', {
-            url: '/about/',
+            url: '/about',
             component: 'appAbout'
         })
         .state('Contacts', {
-            url: '/contacts/',
+            url: '/contacts',
             component: 'appContacts'
         })
         .state('Admin', {
-            url: '/admin/',
-            component: 'appAdmin'
+            url: '/admin',
+            component: 'appAdmin',
+            resolve: {
+                test: function (authService, $state) {
+                    return authService
+                        .loadUser(authService.getToken())
+                        .then(res => {
+                            if (res.category != 'admin') {
+                                $state.go('Auth');
+                            }
+                        })
+                }
+            }
         })
         .state('AdminNewProduct', {
             parent: 'Admin',
-            url: '/admin/products/news',
+            url: 'products/new',
             component: 'appAdminProduct'
         })
         .state('AdminProduct', {
             parent: 'Admin',
-            url: '/admin/products/:id',
+            url: '/products/:id',
             component: 'appAdminProduct'
         })
         .state('AdminProducts', {
             parent: 'Admin',
-            url: '/admin/products',
+            url: '/products',
             component: 'appAdminProducts'
         })
         .state('AdminComments', {
             parent: 'Admin',
-            url: '/admin/comments',
+            url: '/comments',
             component: 'appAdminComments'
         })
         .state('AdminReviews', {
             parent: 'Admin',
-            url: '/admin/reviews/',
+            url: '/reviews',
             component: 'appAdminReviews'
         })
         .state('AdminFeedbacks', {
             parent: 'Admin',
-            url: '/admin/feedbacks/',
+            url: '/feedbacks',
             component: 'appAdminFeedbacks'
         })
         .state('AdminOrders', {
             parent: 'Admin',
-            url: '/admin/orders/',
+            url: '/orders',
             component: 'appAdminOrders'
         })
-        .state('Order', {
-            url: '/order/',
-            component: 'appOrder'
+        .state('AdminOrder', {
+            parent: 'Admin',
+            url: '/orders/:id',
+            component: 'appAdminOrder'
         })
         .state('Auth', {
-            url: '/auth/',
+            url: '/auth',
             component: 'appAuth'
         })
-    // $urlRouterProvider.otherwise('products');
+        .state('Order', {
+            url: '/order',
+            component: 'appOrder'
+        });
+    $urlRouterProvider.otherwise('/products');
 }

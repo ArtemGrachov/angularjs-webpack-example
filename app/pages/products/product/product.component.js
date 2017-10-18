@@ -1,14 +1,16 @@
 import './product.component.scss';
 
 export default {
-    controller: function (productsService, cartService) {
-        this.$routerOnActivate = function (next) {
-            productsService.getProduct(next.params.id)
+    controller: function (productsService, cartService, $stateParams) {
+        this.$onInit = function () {
+            productsService
+                .getProduct($stateParams.id)
                 .then(res => {
                     this.product = res;
                     this.refreshComments();
                 });
         }
+
         this.sendComment = function (data) {
             data.productId = this.product.id;
             productsService

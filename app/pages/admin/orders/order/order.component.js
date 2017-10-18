@@ -4,12 +4,12 @@ export default {
     bindings: {
         $router: '<'
     },
-    controller: function (ordersService) {
+    controller: function (ordersService, $stateParams, $state) {
         this.refreshOrder = function (id) {
             ordersService.getOrder(id).then(res => this.order = res)
         }
-        this.$routerOnActivate = function (next) {
-            this.refreshOrder(next.params.id)
+        this.$onInit = function () {
+            this.refreshOrder($stateParams.id)
         }
         this.totalPrice = ordersService.totalPrice;
         this.setOrderStatus = function (status) {
@@ -18,7 +18,7 @@ export default {
         }
         this.deleteOrder = function () {
             ordersService.deleteOrder(this.order.id)
-                .then(res => res ? this.$router.navigate(['AdminOrders']) : false);
+                .then(res => res ? $state.go('AdminOrders') : false);
         }
     },
     template: require('./order.component.html')

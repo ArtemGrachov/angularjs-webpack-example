@@ -1,5 +1,6 @@
 {
-  "products": [{
+  "products": [
+    {
       "id": "0",
       "name": "TV",
       "price": 1999.98,
@@ -40,7 +41,8 @@
       "id": "ry8oySm6b"
     }
   ],
-  "comments": [{
+  "comments": [
+    {
       "name": "Admin",
       "email": "grachov2195@gmail.com",
       "text": "qqqqq",
@@ -62,7 +64,8 @@
       "id": "S1Lf_L9nW"
     }
   ],
-  "reviews": [{
+  "reviews": [
+    {
       "id": " 0",
       "name": "John Doe",
       "email": "john_doe@mail.com",
@@ -93,15 +96,18 @@
       "id": "ByHCcHm6W"
     }
   ],
-  "shops": [{
-    "id": "0",
-    "name": "Shop #1",
-    "location": {
-      "lat": 0,
-      "lng": 0
+  "shops": [
+    {
+      "id": "0",
+      "name": "Shop #1",
+      "location": {
+        "lat": 0,
+        "lng": 0
+      }
     }
-  }],
-  "feedbacks": [{
+  ],
+  "feedbacks": [
+    {
       "name": "Guest",
       "email": "ggg@gggg.ll",
       "subject": "ggg",
@@ -116,12 +122,14 @@
       "id": 2
     }
   ],
-  "orders": [{
+  "orders": [
+    {
       "name": "Lorem Ipsum",
       "email": "ggg@ggg.ggg",
       "phone": "555-555-55",
       "address": "Lorem Ipsum str., 24a",
-      "cart": [{
+      "cart": [
+        {
           "id": "1",
           "name": "Laptop",
           "price": 3999.99
@@ -146,7 +154,8 @@
       "email": "ggg@ggg.ggg",
       "phone": "555-555-555",
       "address": "Lorem Iposum str., 55",
-      "cart": [{
+      "cart": [
+        {
           "id": "Byko28oh-",
           "name": "HP Printer",
           "price": 55.79
@@ -167,9 +176,41 @@
           "price": 1.99
         }
       ],
-      "status": "waiting",
+      "status": "cancelled",
       "date": "2017-10-11T08:56:19.053Z",
       "id": 2
+    },
+    {
+      "name": "User",
+      "email": "user@user.user",
+      "phone": "555-555-555",
+      "address": "Lorem Ipsum str., 24a",
+      "cart": [
+        {
+          "id": "0",
+          "name": "TV",
+          "price": 1999.98
+        }
+      ],
+      "status": "waiting",
+      "date": 1508319010695,
+      "id": 3
+    },
+    {
+      "name": "User",
+      "email": "user@user.user",
+      "phone": "555-555-555",
+      "address": "Lorem Iposum str., 55",
+      "cart": [
+        {
+          "id": "0",
+          "name": "TV",
+          "price": 1999.98
+        }
+      ],
+      "status": "waiting",
+      "date": 1508319096668,
+      "id": 4
     }
   ],
   "testUser": {

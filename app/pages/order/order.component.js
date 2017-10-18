@@ -2,7 +2,7 @@ export default {
     bindings: {
         $router: '<'
     },
-    controller: function (cartService, ordersService, modalService) {
+    controller: function (cartService, ordersService, modalService, $state) {
         this.cart = cartService.cart;
         this.total = cartService.calcTotal;
         this.sendOrder = function () {
@@ -16,7 +16,7 @@ export default {
             ordersService.sendOrder(this.orderForm)
                 .then(res => {
                     cartService.clearCart();
-                    this.$router.navigate(['Products'])
+                    $state.go('Products')
                 })
         };
         this.confirmOrder = function () {

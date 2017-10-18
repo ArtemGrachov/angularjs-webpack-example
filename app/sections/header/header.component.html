@@ -4,30 +4,30 @@
             <a ui-sref="Products" class="navbar-brand">Hello, Webpack!</a>
         </div>
         <ul class="nav navbar-nav">
-            <li>
+            <li ui-sref-active="active">
                 <a ui-sref="Products">Products</a>
             </li>
-            <li>
+            <li ui-sref-active="active">
                 <a ui-sref="About">About us</a>
             </li>
-            <li>
+            <li ui-sref-active="active">
                 <a ui-sref="Contacts">Contacts</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li ng-if="!$ctrl.user">
+            <li ng-if="!$ctrl.user" ui-sref-active="active">
                 <a ui-sref="Auth">
                     <span class="glyphicon glyphicon-lock"></span>
                     Authorize
                 </a>
             </li>
-            <li ng-if="$ctrl.user">
+            <li ng-if="$ctrl.user" ui-sref-active="active">
                 <a style="cursor: pointer" ng-click="$ctrl.logout()">
                     <span class="glyphicon glyphicon-lock"></span>
                     Logout
                 </a>
             </li>
-            <li ng-if="$ctrl.user.category == 'admin'">
+            <li ng-if="$ctrl.user.category == 'admin'" ui-sref-active="active">
                 <a ui-sref="Admin">
                     <span class="glyphicon glyphicon-scale"></span>
                     Admin panel

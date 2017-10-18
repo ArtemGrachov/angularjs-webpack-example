@@ -2,10 +2,10 @@ export default {
     bindings: {
         $router: '<'
     },
-    controller: function (productsService) {
-        this.$routerOnActivate = function (next) {
-            if (next.params.id) {
-                productsService.getProduct(next.params.id)
+    controller: function (productsService, $stateParams) {
+        this.$onInit = function () {
+            if ($stateParams.id) {
+                productsService.getProduct($stateParams.id)
                     .then(
                         res => {
                             this.product = res;

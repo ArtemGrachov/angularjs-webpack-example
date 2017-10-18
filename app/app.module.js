@@ -52,7 +52,6 @@ import Router from './app.router';
 
 angular
     .module('app', [uiRouter])
-    .config(Router)
     .value('$routerRootComponent', 'app')
     .service('dataService', DataService)
     .service('productsService', ProductsService)
@@ -74,13 +73,15 @@ angular
     .component('appFooter', FooterComponent)
     .component('appSidebar', SidebarComponent)
     .component('appComments', CommentsComponent)
-    .component('appCart', CartComponent)
     .component('appAbout', AboutComponent)
     .component('appContacts', ContactsComponent)
+    // to PRODUCTS MODULE
     .component('appProducts', ProductsComponent)
     .component('appProduct', ProductComponent)
-    .component('appAdmin', AdminComponent)
     .component('appOrder', OrderComponent)
+    .component('appCart', CartComponent)
+    // to ADMIN MODULE
+    .component('appAdmin', AdminComponent)
     .component('appAdminProducts', AdminProductsComponent)
     .component('appAdminProduct', AdminProductComponent)
     .component('appAdminComments', AdminCommentsComponent)
@@ -88,9 +89,12 @@ angular
     .component('appAdminFeedbacks', AdminFeedbacksComponent)
     .component('appAdminOrders', AdminOrdersComponent)
     .component('appAdminOrder', AdminOrderComponent)
+    // TO AUTH MODULE
     .component('appAuth', AuthComponent)
     .component('appAuthReg', AuthRegComponent)
     .component('appAuthLogin', AuthLoginComponent)
+    // TO MODAL MODULE
     .component('appModal', ModalComponent)
     .component('appModalWindow', ModalWindowComponent)
     .component('appModalNotification', ModalNotificationComponent)
+    .config(Router)

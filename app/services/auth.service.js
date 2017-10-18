@@ -22,6 +22,13 @@ export default function ($http) {
     }
     this.userObs = new Observable();
 
+    this.checkUser = function (category) {
+        if (this.user) {
+            return this.user.category == category;
+        }
+        return false;
+    }
+
     this.saveToken = function (token) {
         return localStorage.setItem('authorization', JSON.stringify(token));
     }
