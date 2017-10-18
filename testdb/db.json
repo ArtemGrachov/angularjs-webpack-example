@@ -62,6 +62,14 @@
       "text": "Hi",
       "productId": "B1uEagchZ",
       "id": "S1Lf_L9nW"
+    },
+    {
+      "name": "Guest",
+      "email": "guest777@poshta.ua",
+      "text": "Hi there!",
+      "productId": "0",
+      "id": "B16Nqh4pZ",
+      "productName": "TV"
     }
   ],
   "reviews": [
@@ -82,18 +90,6 @@
       "email": "ggg@gggg.ll",
       "text": "Guset comment!",
       "id": "SyH6cHm6-"
-    },
-    {
-      "name": "Test",
-      "email": "gg@gg",
-      "text": "ggg",
-      "id": "r1NRqBmaW"
-    },
-    {
-      "name": "Test",
-      "email": "gg@gg",
-      "text": "ggg",
-      "id": "ByHCcHm6W"
     }
   ],
   "shops": [
@@ -176,7 +172,7 @@
           "price": 1.99
         }
       ],
-      "status": "cancelled",
+      "status": "completed",
       "date": "2017-10-11T08:56:19.053Z",
       "id": 2
     },
@@ -192,8 +188,8 @@
           "price": 1999.98
         }
       ],
-      "status": "waiting",
-      "date": 1508319010695,
+      "status": "completed",
+      "date": "2017-10-18T09:30:10.695Z",
       "id": 3
     },
     {
@@ -208,8 +204,8 @@
           "price": 1999.98
         }
       ],
-      "status": "waiting",
-      "date": 1508319096668,
+      "status": "cancelled",
+      "date": "2017-10-18T09:31:36.668Z",
       "id": 4
     }
   ],
