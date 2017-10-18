@@ -125,7 +125,8 @@ export default function ($http) {
                             category: 'admin',
                             fullname: 'Test Admin',
                             phone: '555-555-55-55',
-                            address: 'Lorem Ipsum str., 24a'
+                            address: 'Lorem Ipsum str., 24a',
+                            email: 'admin@mail.net'
                         })
                     } else if (token == 'userToken') {
                         res({
@@ -134,6 +135,7 @@ export default function ($http) {
                             category: 'user',
                             fullname: 'Test User',
                             phone: '444-444-44-44',
+                            email: 'user@post.com',
                             address: 'Lorem Ipsum str., 55'
                         })
                     } else {

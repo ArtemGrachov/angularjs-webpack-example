@@ -14,9 +14,6 @@ export default {
                     }
                 )
         }
-        $scope.$on('$routeChangeStart', function () {
-            console.log(arguments);
-        })
         this.refreshReviews();
     },
     template: require('./about.component.html')

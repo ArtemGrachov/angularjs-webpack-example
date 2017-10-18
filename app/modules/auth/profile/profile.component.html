@@ -1,4 +1,4 @@
-<form class="panel panel-default" ng-submit="$ctrl.submitUserForm()">
+<form class="panel panel-default" ng-submit="$ctrl.submitUserForm()" name="userForm" novalidate>
     <div class="panel-heading">
         Profile
     </div>
@@ -6,6 +6,10 @@
         <div class="form-group">
             <label>Login: </label>
             <input type="text" class="form-control" ng-model="$ctrl.userForm.login">
+        </div>
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email" ng-model="$ctrl.userForm.email" class="form-control">
         </div>
         <div class="form-group">
             <label>Password</label>
@@ -23,6 +27,6 @@
         </div>
     </div>
     <div class="panel-footer">
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$pristine || userForm.$invalid">Update</button>
     </div>
 </form>

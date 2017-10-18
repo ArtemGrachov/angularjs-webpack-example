@@ -6,7 +6,6 @@ export default function ($stateProvider) {
             resolve: {
                 checkGuest: function (authService, $state) {
                     return new Promise((res, rej) => {
-                            console.log(authService.user);
                             if (authService.user) {
                                 rej()
                             } else {

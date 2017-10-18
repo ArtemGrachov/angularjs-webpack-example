@@ -13,7 +13,6 @@ export default function ($rootScope, $compile, $q) {
         this.createModal(config, 'notifications');
     }
     this.createModal = function (config, type) {
-        console.log('modal create')
         config.id = Math.ceil((Math.random() * new Date().getTime()));
         this.modals[type].push(config);
         if (!this.activeModal) {

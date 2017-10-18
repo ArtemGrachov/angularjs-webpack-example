@@ -1,12 +1,12 @@
 <div class="panel panel-default">
     <div class="panel-heading">Login</div>
-    <form class="panel-body" ng-submit="$ctrl.login()">
+    <form class="panel-body" ng-submit="$ctrl.login()" name="loginForm" novalidate>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-user"></span>
                 </div>
-                <input type="text" placeholder="Enter your login" ng-model="$ctrl.loginForm.login" class="form-control">
+                <input type="text" placeholder="Enter your login" ng-model="$ctrl.loginForm.login" class="form-control" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -14,10 +14,10 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                <input type="password" placeholder="Enter your password" ng-model="$ctrl.loginForm.password" class="form-control">
+                <input type="password" placeholder="Enter your password" ng-model="$ctrl.loginForm.password" class="form-control" ng-required="true">
             </div>
         </div>
-        <button type="submit" class="btn btn-block btn-success">
+        <button type="submit" class="btn btn-block btn-success" ng-disabled="loginForm.$invalid">
             <span class="glyphicon glyphicon-ok"></span>
             Login
         </button>

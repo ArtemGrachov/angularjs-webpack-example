@@ -1,12 +1,20 @@
 <div class="panel panel-default">
     <div class="panel-heading">Registration form</div>
-    <form class="panel-body" ng-submit="$ctrl.reg()">
+    <form class="panel-body" ng-submit="$ctrl.reg()" name="regForm" novalidate>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-user"></span>
                 </div>
-                <input type="text" placeholder="Enter your login" ng-model="$ctrl.regForm.login" class="form-control">
+                <input type="text" placeholder="Enter your login" ng-model="$ctrl.regForm.login" class="form-control" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </div>
+                <input type="email" placeholder="Enter your email" ng-model="$ctrl.regForm.email" class="form-control" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -14,7 +22,7 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                <input type="password" placeholder="Enter your password" ng-model="$ctrl.regForm.password" class="form-control">
+                <input type="password" placeholder="Enter your password" ng-model="$ctrl.regForm.password" class="form-control" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -22,7 +30,7 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                <input type="password" placeholder="Repeat password" class="form-control" ng-model="$ctrl.regForm.passRepeat">
+                <input type="password" placeholder="Repeat password" class="form-control" ng-model="$ctrl.regForm.passRepeat" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -30,7 +38,7 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </div>
-                <input type="text" placeholder="Enter your full name" class="form-control" ng-model="$ctrl.regForm.fullname">
+                <input type="text" placeholder="Enter your full name" class="form-control" ng-model="$ctrl.regForm.fullname" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -38,7 +46,7 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-earphone"></span>
                 </div>
-                <input type="text" placeholder="Enter your phone number" class="form-control" ng-model="$ctrl.regForm.phone">
+                <input type="text" placeholder="Enter your phone number" class="form-control" ng-model="$ctrl.regForm.phone" ng-required="true">
             </div>
         </div>
         <div class="form-group">
@@ -46,10 +54,10 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-map-marker"></span>
                 </div>
-                <input type="text" placeholder="Enter your address" class="form-control" ng-model="$ctrl.regForm.address">
+                <input type="text" placeholder="Enter your address" class="form-control" ng-model="$ctrl.regForm.address" ng-required="true">
             </div>
         </div>
-        <button type="submit" class="btn btn-block btn-success">
+        <button type="submit" class="btn btn-block btn-success" ng-disabled="regForm.$invalid">
             <span class="glyphicon glyphicon-ok"></span>
             Register
         </button>
