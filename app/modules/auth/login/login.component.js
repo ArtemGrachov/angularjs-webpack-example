@@ -1,5 +1,6 @@
 export default {
     controller: function (authService, modalService, $rootScope) {
+        'ngInject';
         this.login = function () {
             authService
                 .login(this.loginForm)

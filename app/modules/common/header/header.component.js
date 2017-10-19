@@ -1,5 +1,6 @@
 export default {
     controller: function (authService, $rootScope) {
+        'ngInject';
         const $this = this;
         this.logout = () => authService.logout();
         this.updateAuth = () => {

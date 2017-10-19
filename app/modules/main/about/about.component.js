@@ -1,5 +1,6 @@
 export default {
     controller: function (reviewsService, $scope) {
+        'ngInject';
         this.sendReview = function (data) {
             reviewsService.addReview(data)
                 .then(

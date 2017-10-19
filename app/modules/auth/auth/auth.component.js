@@ -1,5 +1,6 @@
 export default {
     controller: function (authService, $state) {
+        'ngInject';
         this.user = authService.user;
         this.userSubscr = authService.userObs.subscribe(
             res => {

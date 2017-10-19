@@ -5,6 +5,7 @@ export default {
         $router: '<'
     },
     controller: function (ordersService, $stateParams, $state) {
+        'ngInject';
         this.refreshOrder = function (id) {
             ordersService.getOrder(id).then(res => this.order = res)
         }

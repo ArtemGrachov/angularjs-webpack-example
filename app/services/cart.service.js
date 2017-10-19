@@ -1,4 +1,5 @@
 export default function (productsService) {
+    'ngInject';
     this.cart = [];
     this.updateStorage = function () {
         localStorage.setItem('cart', JSON.stringify(this.cart.map(product => product.id)));

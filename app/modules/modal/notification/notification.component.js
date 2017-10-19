@@ -4,6 +4,7 @@ export default {
         id: '<'
     },
     controller: function (modalService) {
+        'ngInject';
         this.close = function () {
             modalService.deleteModal(this.config.id, 'notifications')
         }

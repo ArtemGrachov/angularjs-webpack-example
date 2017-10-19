@@ -207,22 +207,6 @@
       "status": "cancelled",
       "date": "2017-10-18T09:31:36.668Z",
       "id": 4
-    },
-    {
-      "name": "Lorem Ipsum",
-      "email": "dd@dd.gg",
-      "phone": "55-555-555",
-      "address": "Lorem Ipsum str., 24a",
-      "cart": [
-        {
-          "id": "0",
-          "name": "TV",
-          "price": 1999.98
-        }
-      ],
-      "status": "waiting",
-      "date": 1508326747529,
-      "id": 5
     }
   ],
   "testUser": {

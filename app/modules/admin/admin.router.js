@@ -1,4 +1,5 @@
 export default function ($stateProvider, $urlRouterProvider) {
+    'ngInject';
     $urlRouterProvider.when('/admin', '/admin/products');
     $stateProvider
         .state('Admin', {
@@ -51,5 +52,5 @@ export default function ($stateProvider, $urlRouterProvider) {
             parent: 'Admin',
             url: '/orders/:id',
             component: 'appAdminOrder'
-        })
+        });
 }

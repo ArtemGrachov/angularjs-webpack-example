@@ -27,7 +27,11 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015']
+                        presets: ['es2015'],
+                        plugins: [
+                            // 'transform-runtime',
+                            'angularjs-annotate'
+                        ]
                     }
                 }]
             },
@@ -59,6 +63,11 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
+            },
+            {
+                test: /\/js$/,
+                use: ['source-map-loader'],
+                enforce: 'pre'
             }
         ]
     },
@@ -69,8 +78,8 @@ module.exports = {
             filename: 'index.html',
             template: './index.html'
         }),
-        new ngAnnotatePlugin({
-            add: true
-        })
+        // new ngAnnotatePlugin({
+        //     add: true
+        // })
     ]
 }

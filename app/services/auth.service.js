@@ -1,4 +1,5 @@
 export default function ($http) {
+    "ngInject";
     const $this = this;
 
     function Observable() {

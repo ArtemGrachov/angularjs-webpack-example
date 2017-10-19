@@ -1,4 +1,5 @@
 export default function (dataService) {
+    'ngInject';
     this.commentsUrl = 'comments/';
     this.getComments = function (options) {
         return dataService.get(this.commentsUrl + (options ? options : ''));

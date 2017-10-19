@@ -44,6 +44,7 @@ angular
     .service('modalService', ModalService)
     .service('authService', AuthService)
     .run(function (authService) {
+        'ngInject';
         const token = authService.getToken();
         if (token) {
             authService.loadUser(token);

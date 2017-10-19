@@ -3,6 +3,7 @@ export default {
         $router: '<'
     },
     controller: function (cartService, ordersService, modalService, $state) {
+        'ngInject';
         this.cart = cartService.cart;
         this.total = cartService.calcTotal;
         this.sendOrder = function () {

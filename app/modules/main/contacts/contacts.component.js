@@ -1,5 +1,6 @@
 export default {
     controller: function (dataService) {
+        'ngInject';
         this.sendFeedback = function () {
             dataService.post('feedbacks/', this.feedbackForm)
                 .then(

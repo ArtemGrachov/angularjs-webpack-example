@@ -1,4 +1,5 @@
 export default function ($rootScope, $compile, $q) {
+    'ngInject';
     this.modals = {
         windows: [],
         notifications: []

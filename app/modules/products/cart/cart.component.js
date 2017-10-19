@@ -1,5 +1,6 @@
 export default {
     controller: function (cartService, productsService) {
+        'ngInject';
         this.cart = cartService.cart;
         this.removeFromCart = function (index) {
             cartService.removeFromCart(index);

@@ -2,6 +2,7 @@ import './product.component.scss';
 
 export default {
     controller: function (productsService, cartService, $stateParams) {
+        'ngInject';
         this.$onInit = function () {
             productsService
                 .getProduct($stateParams.id)

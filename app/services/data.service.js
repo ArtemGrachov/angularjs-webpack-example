@@ -1,4 +1,5 @@
 export default function ($http, modalService, authService) {
+    'ngInject';
     this.get = function (url, authTest) {
         const reqParams = {
             method: 'GET',

@@ -4,6 +4,7 @@ export default {
         id: '<'
     },
     controller: function ($scope, $element, modalService) {
+        'ngInject';
         this.$onInit = function () {
             if (!this.config.btns) {
                 this.config.btns = [{

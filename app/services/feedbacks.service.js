@@ -1,4 +1,5 @@
 export default function (dataService) {
+    'ngInject';
     this.feedbackUrl = 'feedbacks/';
     this.getFeedbacks = function () {
         return dataService.get(this.feedbackUrl, 'admin');

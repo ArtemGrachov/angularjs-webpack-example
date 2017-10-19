@@ -1,5 +1,6 @@
 export default {
     controller: function (authService, modalService, $rootScope) {
+        'ngInject';
         this.reg = function () {
             authService.reg(this.regForm)
                 .then(res => {

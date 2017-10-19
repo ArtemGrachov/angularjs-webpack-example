@@ -3,6 +3,7 @@ export default {
         $router: '<'
     },
     controller: function (productsService, $stateParams) {
+        'ngInject';
         this.$onInit = function () {
             if ($stateParams.id) {
                 productsService.getProduct($stateParams.id)

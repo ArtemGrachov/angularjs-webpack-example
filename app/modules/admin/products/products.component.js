@@ -1,5 +1,6 @@
 export default {
     controller: function (productsService) {
+        'ngInject';
         productsService
             .getProducts()
             .then(

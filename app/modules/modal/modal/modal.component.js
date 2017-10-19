@@ -2,6 +2,7 @@ import './modal.component.scss';
 
 export default {
     controller: function (modalService, $scope, $element) {
+        'ngInject';
         this.modals = modalService.modals;
         this.$onInit = function () {
             modalService.activeModal = {

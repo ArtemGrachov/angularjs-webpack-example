@@ -1,5 +1,6 @@
 export default {
     controller: function (ordersService) {
+        'ngInject';
         this.refreshOrder = function () {
             ordersService.getOrders()
                 .then(res => this.orders = res);

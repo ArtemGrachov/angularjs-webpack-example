@@ -1,4 +1,5 @@
 export default function (dataService) {
+    'ngInject';
     this.reviewsUrl = 'reviews/';
     this.getReviews = function () {
         return dataService.get(this.reviewsUrl);

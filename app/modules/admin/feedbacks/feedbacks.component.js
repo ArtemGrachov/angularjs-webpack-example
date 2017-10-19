@@ -1,5 +1,6 @@
 export default {
     controller: function (feedbacksService) {
+        'ngInject';
         this.refreshFeedbacks = function () {
             feedbacksService.getFeedbacks()
                 .then(res => this.feedbacks = res)

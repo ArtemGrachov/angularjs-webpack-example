@@ -1,4 +1,5 @@
 export default function (dataService, commentsService) {
+    'ngInject';
     this.productsUrl = 'products/';
 
     this.getProduct = function (id) {

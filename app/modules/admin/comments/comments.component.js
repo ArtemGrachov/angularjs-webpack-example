@@ -1,5 +1,6 @@
 export default {
     controller: function (commentsService, productsService) {
+        'ngInject';
         this.refreshComments = function () {
             commentsService.getComments()
                 .then(res => {

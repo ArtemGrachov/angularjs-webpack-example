@@ -1,4 +1,5 @@
 export default function (productsService, cartService, dataService) {
+    'ngInject';
     this.orderUrl = 'orders/';
     this.sendOrder = function (data) {
         if (data.cart.length > 0) {

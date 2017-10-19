@@ -1,5 +1,6 @@
 export default {
     controller: function (reviewsService) {
+        'ngInject';
         this.refreshReviews = function () {
             reviewsService.getReviews()
                 .then(res => this.reviews = res)
